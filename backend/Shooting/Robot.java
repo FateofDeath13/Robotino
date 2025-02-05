@@ -116,7 +116,7 @@ public class Robot
 	
 	public static void main(String args[])
 	{
-		String hostname = "192.168.5.5";
+		String hostname = "192.168.0.1";
 		if( args.length == 1)
 		{
 			hostname = args[0].toString();
