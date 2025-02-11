@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiel</title>
+    <link rel="stylesheet" href="game.css">
+    <script defer src="game.js"></script>
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="game-content">
+            <h1>Spielseite</h1>
+        </div>
+        <div class="sidebar">
+            <button id="backToHome">Menü</button>
+        </div>
+        <div class="bottom-bar">
+            <div class="slider-container">
+                <label for="direction">Richtung</label>
+                <input type="range" id="direction" min="0" max="100" value="50" class="slider">
+            </div>
+            <div class="slider-container">
+                <label for="strength">Stärke</label>
+                <input type="range" id="strength" min="0" max="100" value="50" class="slider">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh; 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, #028c00, #22883b); 
+}
+
+.game-wrapper { 
+    display: flex; 
+    flex-direction: row; 
+    flex-grow: 1; 
+}
+
+.game-content { 
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.sidebar { 
+    width: 5%; 
+    background: linear-gradient(135deg, #028c00, #22883b);  
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px; 
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.bottom-bar { 
+    height: 200px; 
+    background: linear-gradient(135deg, #028c00, #22883b); 
+    width: 50%; /* Sicherstellen, dass die Bottom-Bar die volle Breite hat */
+    position: absolute;
+    margin-left: 20%;
+    bottom: 0; /* Bottom-Bar am unteren Rand fixieren */
+    border: 2px solid black;
+    border-radius: 2px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slider-container {
+    position: relative;
+    width: 50%; /* Breite der Leiste auf 50px setzen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+}
+
+.slider:focus {
+    outline: none;
+}
+
+button { 
+    padding: 12px 24px; 
+    font-size: 18px; 
+    margin: 10px; 
+    cursor: pointer; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: grey; 
+    color: black; 
+    transition: 0.3s; 
+}
+
+button:hover { 
+    background-color: #ff4757; 
+}
