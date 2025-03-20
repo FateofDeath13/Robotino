@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Robotino Projekt",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-I", "E:/robotino_api2/include",
+                "-L", "E:/robotino_api2/lib",
+                "${workspaceFolder}/src/main.cpp",
+                "-o", "${workspaceFolder}/bin/main.exe",
+                "-lrobotinoapi2",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<toc version="1.0">
+<!-- First tocitem specifies top level in Help browser Contents pane -->
+<!-- This can be a roadmap page, as shown below, or a content page -->
+
+    <tocitem target="html_simulink_Home.html">Robotino Blockset
+        <!-- Nest tocitems to create hierarchical entries in  Contents-->
+        <!-- To include icons, use the following syntax for tocitems: -->
+        <!-- <tocitem target="foo.html" image="HelpIcon.NAME"> -->
+        <!-- Title-of-Section </tocitem> -->
+        <!-- where NAME is one of the following (use capital letters): -->
+        <!-- FUNCTION, USER_GUIDE, EXAMPLES, BLOCK, GETTING_STARTED, -->
+        <!-- DEMOS, RELEASE_NOTES --> 
+        <!-- Icon images used for these entries are also stored in -->
+        <!-- matlabroot/toolbox/matlab/icons -->
+        <!-- A Getting Started Guide usually comes first -->
+        <tocitem target="html_simulink_Intro.html" image="$toolbox/matlab/icons/greenarrowicon.gif">
+            Introduction to Robotino Blockset
+        </tocitem>
+ 
+        <!-- Function reference next -->
+		<tocitem target="html_simulink_Blocks.html"> Simulink Blocks
+			<tocitem target="html_simulink_AnalogInput.html">AnalogInput
+			</tocitem>
+			<tocitem target="html_simulink_Bumper.html">Bumper
+			</tocitem>
+			<tocitem target="html_simulink_Camera.html">Camera
+			</tocitem>
+			<tocitem target="html_simulink_Com.html">Com
+			</tocitem>
+			<tocitem target="html_simulink_DigitalInput.html">DigitalInput
+			</tocitem>
+			<tocitem target="html_simulink_DigitalOutput.html">DigitalOutput
+			</tocitem>
+			<tocitem target="html_simulink_DistanceSensor.html">DistanceSensor
+			</tocitem>
+			<tocitem target="html_simulink_EncoderInput.html">EncoderInput
+			</tocitem>
+			<tocitem target="html_simulink_Gripper.html">Gripper
+			</tocitem>
+			<tocitem target="html_simulink_LaserRangeFinder.html">LaserRangeFinder
+			</tocitem>
+			<tocitem target="html_simulink_LineFollower.html">LineFollower
+			</tocitem>
+			<tocitem target="html_simulink_Manipulator.html">Manipulator
+			</tocitem>
+			<tocitem target="html_simulink_Motor.html">Motor
+			</tocitem>
+            <tocitem target="html_simulink_Northstar.html">NorthStar
+			</tocitem>
+			<tocitem target="html_simulink_Odometry.html">Odometry
+			</tocitem>
+			<tocitem target="html_simulink_OmniDrive.html">OmniDrive
+			</tocitem>
+			<tocitem target="html_simulink_PowerManagement.html">PowerManagement
+			</tocitem>
+			<tocitem target="html_simulink_PowerOutput.html">PowerOutput
+			</tocitem>
+			<tocitem target="html_simulink_Relay.html">Relay
+			</tocitem>
+		</tocitem>
+        <!-- The first file lists all of the functions, categorizing them -->
+        <!-- Examples -->
+        <tocitem target="html_simulink_Examples.html" image="$toolbox/matlab/icons/demoicon.gif">Examples
+			<!-- Inside examples, list all examples -->
+			<tocitem target="html_simulink_example_LineFollowerCamera.html">Camera</tocitem>
+			<tocitem target="html_simulink_example_DistanceSensor.html">Distance Sensor</tocitem>
+			<tocitem target="html_simulink_example_LaserRangeFinder.html">Laser Range Finder</tocitem>
+			<tocitem target="html_simulink_example_LineFollowerAnalogInput.html">Analog Input</tocitem>
+			<tocitem target="html_simulink_example_LineFollowerDigitalInput.html">Digital Input</tocitem>
+			<tocitem target="html_simulink_example_Manipulator.html">Manipulator</tocitem>
+			<tocitem target="html_simulink_example_RobotinoHardware.html">RobotinoHardware</tocitem>
+		</tocitem>
+    </tocitem>
+</toc>

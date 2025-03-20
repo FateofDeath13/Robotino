@@ -1,0 +1,477 @@
+Library {
+  Name			  "lib_robotinohardware"
+  Version		  7.0
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Jul 30 15:53:24 2008"
+  Creator		  "indorewala"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "verbeek"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jan 11 10:57:17 2016"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:104>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+      DisplayMFileStacktrace  on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_robotinohardware"
+    Location		    [635, 194, 1284, 1005]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "AnalogInput"
+      Ports		      [1, 1]
+      Position		      [135, 578, 210, 612]
+      FunctionName	      "sfun_AnalogInput"
+      Parameters	      "num"
+      MaskType		      "AnalogInput"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\n\n-- Output ports --\nOutput 1: Value"
+      MaskPromptString	      "AnalogInput number [0-7]"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "num=@1;"
+      MaskDisplay	      "port_label( 'output', 1, 'Value' );\nimage( imread( 'images\\jpg\\adc_empty.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "0"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Bumper"
+      Ports		      [1, 1]
+      Position		      [35, 266, 85, 364]
+      FunctionName	      "sfun_Bumper"
+      MaskType		      "Bumper Object"
+      MaskDescription	      "The Bumper object detects collisions using Robotinos bumper.\nIf the bumper bar is pressed, the output port 'Collision' is set to 1, 0 otherwise.\n\n-- Input ports --\nInput 1: ComId\n-- Output ports --\nOutput 1: Collision"
+      MaskDisplay	      "image( imread( 'images\\jpg\\bumper.jpg' ), [10,10,25,25] )\nport_label('output', 1, 'Collision' );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Camera"
+      Ports		      [2, 3]
+      Position		      [165, 267, 220, 363]
+      FunctionName	      "sfun_Camera"
+      MaskType		      "Camera Object"
+      MaskDescription	      "The Camera object delivers images from Robotinos camera.\nThe output is a RGB-image.\nIf the monitor enable signal is 1 the received image is plotted in MATLAB.\n\n-- Input ports --\nInput 1: ComId\nInput 2: Monitor enable\n-- Output ports --\nOutput 1: R\nOutput 2: G\nOutput 3: B"
+      MaskDisplay	      "image( imread( 'images\\jpg\\camera.jpg' ), [10, 10, 25, 25] );\nport_label('output', 1, 'R' );\nport_label('output', 2, 'G' );\nport_label('output', 3, 'B' );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Com"
+      Ports		      [0, 1]
+      Position		      [30, 21, 120, 109]
+      FunctionName	      "sfun_Com"
+      Parameters	      "ip"
+      MaskType		      "Com Object"
+      MaskDescription	      "The Com object sets up a connection to Robotino.\n\n-- Input ports --\nnone\n-- Output ports --\nOutput 1: ComId"
+      MaskHelp		      "Enter the ip-address and port you want to connect to,\ne.g.  '172.26.101.101'  or '127.0.0.1:8080' for using RobotinoSim."
+      MaskPromptString	      "IP Address"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskDisplay	      "port_label( 'output', 1, 'Com' );\nimage( imread( 'images\\jpg\\com.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "'127.0.0.1:8080'"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "DigitalInput"
+      Ports		      [1, 1]
+      Position		      [40, 577, 115, 613]
+      FunctionName	      "sfun_DigitalInput"
+      Parameters	      "num"
+      MaskType		      "DigitalInput"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\n\n-- Output ports --\nOutput 1: Value"
+      MaskPromptString	      "DigitalInput number [0-7]"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "num=@1;"
+      MaskDisplay	      "port_label( 'output', 1, 'Value' );\nimage( imread( 'images\\jpg\\digitalinput_empty.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "0"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "DigitalOutput"
+      Ports		      [2]
+      Position		      [100, 654, 145, 696]
+      FunctionName	      "sfun_DigitalOutput"
+      Parameters	      "num"
+      MaskType		      "DigitalOutput"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\nInput 2: Value\n-- Output ports --\nNone"
+      MaskPromptString	      "DigitalOutput number [0-7]"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "num=@1;"
+      MaskDisplay	      "image( imread( 'images\\jpg\\digitaloutput_empty.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "0"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "DistanceSensor"
+      Ports		      [1, 1]
+      Position		      [100, 266, 150, 364]
+      FunctionName	      "sfun_DistanceSensor"
+      Parameters	      "num"
+      MaskType		      "DistanceSensor"
+      MaskDescription	      "The DistanceSensor object returns the voltages measured by Robotinos distance sensors.\n\n-- Input ports --\nInput 1: ComId\n-- Output ports --\nOutput 1: Voltage"
+      MaskPromptString	      "DistanceSensor number (0 - 8)"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "num=@1;"
+      MaskDisplay	      "port_label( 'output', 1, 'Voltage' );\nimage( imread( 'images\\jpg\\distance.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "0"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "DriveSystem"
+      Ports		      [4]
+      Position		      [155, 48, 245, 107]
+      FunctionName	      "sfun_DriveSystem"
+      MaskType		      "DriveSystem"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\nInput 2: vx [m/s]\nInput 3: vy [m/s]\nInput 4: omega [rad/s]\n\n-- Output ports --\nNone"
+      MaskDisplay	      "\nimage( imread( 'images\\jpg\\drivesystem.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "EncoderInput"
+      Ports		      [2, 2]
+      Position		      [225, 142, 315, 193]
+      FunctionName	      "sfun_EncoderInput"
+      MaskType		      "EncoderInput"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\nInput 2: Reset position\n\n-- Output ports --\nOutput 1: Velocity [ticks/s]\nOutput 2: Position [ticks]"
+      MaskDisplay	      "port_label( 'output', 1, 'Velocity' );\nport_label( 'output', 2, 'Position' );\nimage( imread( 'images\\jpg\\encoderinput.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Gripper"
+      Ports		      [3, 2]
+      Position		      [40, 484, 125, 546]
+      FunctionName	      "sfun_Gripper"
+      MaskType		      "Gripper"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\nInput 2: Enable\nInput 3: Close\n\n-- Output ports --\nOutput 1: Opened\nOutput 2: Closed"
+      MaskDisplay	      "port_label( 'output', 1, 'Opened' );\nport_label( 'output', 2, 'Closed' );\nimage( imread( 'images\\jpg\\gripper.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "LaserRangeFinder"
+      Ports		      [1, 13]
+      Position		      [385, 268, 500, 412]
+      FunctionName	      "sfun_LaserRangeFinder"
+      MaskType		      "LaserRangeFinder"
+      MaskDescription	      "The LaserRangeFinder object delivers laser scan data from Robotino.\n\n-- Input ports --\nInput 1: ComId\n-- Output ports --\nOutput 1: seq, The sequence number\nOutput 2: stamp, Time stamp\nOutput 3: angle_min, Minimum angle in radians\nOutput 4: angle_max, Maximum angle in radians\nOutput 5: angle_increment, Angle between two scans in radians\nOutput 6: time_increment, Time between two scans in seconds\nOutput 7: scan_time, Time to scan the field of view in seconds\nOutput 8: range_min, Minimum range in meters\nOutput 9: range_max, Maximum range in meters\nOutput 10: ranges, Range measurements in meters\nOutput 11: numRanges, Number of range measurements\nOutput 12: intensities, Intensity measurements\nOutput 13: numIntensities, Number of intensity measurements"
+      MaskDisplay	      "port_label( 'output', 1, 'seq' );\nport_label( 'output', 2, 'stamp' );\nport_label( 'output', 3, 'angle_min' );\nport_label( 'output', 4, 'angle_max' );\nport_label( 'output', 5, 'angle_increment' );\nport_label( 'output', 6, 'time_increment' );\nport_label( 'output', 7, 'scan_time' );\nport_label( 'output', 8, 'range_min' );\nport_label( 'output', 9, 'range_max' );\nport_label( 'output', 10, 'ranges' );\nport_label( 'output', 11, 'numRanges' );\nport_label( 'output', 12, 'intensities' );\nport_label( 'output', 13, 'numIntensities' );\nimage( imread( 'images\\jpg\\laserrangefinder.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Line Follower"
+      Ports		      [5, 3]
+      Position		      [335, 144, 415, 226]
+      FunctionName	      "sfun_LineFollower"
+      MaskType		      "Line Follower Object"
+      MaskDescription	      "The Line Follower calculates the correct OmniDrive velocities to make Robotino follow a line.\nTo work correctly it needs a RGB camera image input.\nThe Line Follower is also provided with an emergency stop input, e.g. the Bumper object can be used to stop Robotino in case of a collision.\n\n-- Input ports --\nInput 1: ComId\nInput 2: R\nInput 3: G\nInput 4: B\nInput 5: Emergency stop\n-- Output ports --\nOutput 1: vx, target\nOutput 2: vy, target\nOutput 3: w, target"
+      MaskDisplay	      "port_label( 'output', 1, 'vx,target');\nport_label( 'output', 2, 'vy,target');\nport_label( 'output', 3, 'w,target');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Manipulator"
+      Ports		      [5, 13]
+      Position		      [250, 268, 365, 412]
+      FunctionName	      "sfun_Manipulator"
+      MaskType		      "Manipulator"
+      MaskDescription	      "The Manipulator object can be used to control the arm on Robotino.\n\n-- Input ports --\nInput 1: ComId\nInput 2: angles, Array containing the set-points in deg\nInput 3: numAngles, Number of elements in angles\nInput 4: speeds, Array containing the speed set-points in rpm\nInput 5: numSpeeds, Number of elements in speeds\n-- Output ports --\nOutput 1: seq, The sequence number\nOutput 2: angles, Array storing the current axes positions in degrees\nOutput 3: numAngles, The number of elemets stored in angles. This is equal to the number of axes.\nOutput 4: speeds, Array storing the current axes speeds in rpm\nOutput 5: numSpeeds, The number of elemets stored in speeds. This is equal to the number of axes.\nOutput 6: errors, Error code of axes.\nOutput 7: numErrors, The number of elemets stored in errors. This is equal to the number of axes.\nOutput 8: motors_enabled, Is 1 if the motors are enabled. Otherwise 0.\nOutput 9: store_current_position, Is 1 if the store position button is pressed. Otherwise 0.\nOutput 10: cwAxesLimits, Array storing the current axes limits in degrees.\nOutput 11: numCwAxesLimits, The number of elemets stored in cwAxesLimits. If axes limits had been received this is equal to the number of axes. Otherwise 0.\nOutput 12: ccwAxesLimits, Array storing the current axes limits in degrees.\nOutput 13: numCcwAxesLimits, The number of elemets stored in ccwAxesLimits. If axes limits had been received this is equal to the number of axes. Otherwise 0."
+      MaskDisplay	      "port_label( 'output', 1, 'seq' );\nport_label( 'output', 2, 'angles' );\nport_label( 'output', 3, 'numAngles' );\nport_label( 'output', 4, 'speeds' );\nport_label( 'output', 5, 'numSpeeds' );\nport_label( 'output', 6, 'errors' );\nport_label( 'output', 7, 'numErrors' );\nport_label( 'output', 8, 'motors_enabled' );\nport_label( 'output', 9, 'store_current_position' );\nport_label( 'output', 10, 'cwAxesLimits' );\nport_label( 'output', 11, 'numCwAxesLimits' );\nport_label( 'output', 12, 'ccwAxesLimits' );\nport_label( 'output', 13, 'numCcwAxesLimits' );\nimage( imread( 'images\\jpg\\manipulator_icon.jpg' ), [10, 100, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Motor"
+      Ports		      [4, 3]
+      Position		      [110, 143, 200, 202]
+      FunctionName	      "sfun_Motor"
+      Parameters	      "num, kp, ki, kd"
+      MaskType		      "Motor"
+      MaskDescription	      "-- Input ports --\nInput 1: ComId\nInput 2: Target speed [rpm]\nInput 3: Brake\nInput 4: Reset position\n\n-- Output ports --\nOutput 1: Actual speed\nOutput 2: Actual position\nOutput 3: Motor current"
+      MaskPromptString	      "Motor number|Constant P|Constant I|Constant D"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "off,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "num=@1;kp=@2;ki=@3;kd=@4;"
+      MaskDisplay	      "port_label( 'output', 1, 'Speed' );\nport_label( 'output', 2, 'Position' );\nport_label( 'output', 3, 'Current' );\nimage( imread( 'images\\jpg\\motor_empty.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "0|0.9|0.1|0"
+      MaskTabNameString	      ",,,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "NorthStar"
+      Ports		      [3, 8]
+      Position		      [250, 487, 365, 618]
+      FunctionName	      "sfun_NorthStar"
+      MaskType		      "NorthStar"
+      MaskDescription	      "Implements the NorthStar feature on Robotino.\n\n-- Input ports --\nInput 1: ComId\nInput 2: roomId, Set the id of the room\nInput 3: ceilingCal, Calibration of the ceiling\n-- Output ports --\nOutput 1: sequenceNo, The sequence number\nOutput 2: roomId, The id of the current room\nOutput 3: numSpotsVisible, The number of visible spots.\nOutput 4: posX, The current position in x direction\nOutput 5: posY, The current position in y direction.\nOutput 6: posTheta, The current orientation in degrees.\nOutput 7: magSpot0, The signal strenght of spot 1.\nOutput 8: magSpot1, The signal strenght of spot 2.\n"
+      MaskDisplay	      "port_label( 'output', 1, 'seqNo' );\nport_label( 'output', 2, 'roomId' );\nport_label( 'output', 3, 'numSpotsVisible' );\nport_label( 'output', 4, 'posX' );\nport_label( 'output', 5, 'posY' );\nport_label( 'output', 6, 'posTheta' );\nport_label( 'output', 7, 'magSpot0' );\nport_label( 'output', 8, 'magSpot1' );\nimage( imread( 'images\\jpg\\nstar.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Odometry"
+      Ports		      [5, 3]
+      Position		      [40, 392, 125, 458]
+      FunctionName	      "sfun_Odometry"
+      MaskType		      "Odometry"
+      MaskDescription	      "Ther Odometry object delivers odometric information calculated from Robotinos motor activity.\n\n-- Input ports --\nInput 1: ComId\nInput 2: Set\nInput 3: x, set\nInput 4: y, set\nInput 5: phi, set\n-- Output ports --\nOutput 1: x\nOutput 2: y\nOutput 3: phi"
+      MaskDisplay	      "port_label( 'output', 1, 'x' );\nport_label( 'output', 2, 'y' );\nport_label( 'output', 3, 'phi' );\nimage( imread( 'images\\jpg\\odometry.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "OmniDrive"
+      Ports		      [4, 3]
+      Position		      [30, 139, 85, 236]
+      FunctionName	      "sfun_OmniDrive"
+      MaskType		      "OmniDrive Object"
+      MaskDescription	      "The OmniDrive object corresponds to Robotinos OmniDrive.\nSet a target speed at the three input ports in order to calculate the corresponding motor speeds in rpm. Plug the OmniDrive object to three motors to move Robotino!\n\n-- Input ports --\nInput 1: ComId\nInput 2: vx, target\nInput 3: vy, target\nInput 4: w, target\n-- Output ports --\nOutput 1: OmniDriveId\nOutput 2: v1\nOutput 3: v2\nOutput 4: v3"
+      MaskDisplay	      "image( imread( 'images\\jpg\\omnidrive.jpg' ), [10,10,25,25] );\nport_label('output', 1, 'v1' );\nport_label('output', 2, 'v2' );\nport_label('output', 3, 'v3' );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "PowerManagement"
+      Ports		      [1, 2]
+      Position		      [40, 729, 125, 771]
+      FunctionName	      "sfun_PowerManagement"
+      MaskType		      "PowerManagement"
+      MaskDescription	      "The PowerManagement object delivers information about Robotinos output voltage and current.\n\n\n-- Input ports --\nInput 1: ComId\n-- Output ports --\nOutput 1: Voltage\nOutput 2: Current"
+      MaskDisplay	      "port_label( 'output', 1, 'Voltage' );\nport_label( 'output', 2, 'Current' );\nimage( imread( 'images\\jpg\\battery.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "PowerOutput"
+      Ports		      [2, 1]
+      Position		      [145, 487, 220, 523]
+      FunctionName	      "sfun_PowerOutput"
+      MaskType		      "PowerOutput"
+      MaskDescription	      "The PowerOutput object measures the output current.\n\n-- Input ports --\nInput 1: ComId\nInput 2: Set point\n-- Output ports --\nOutput 1: Current"
+      MaskDisplay	      "port_label( 'output', 1, 'Current' );\nimage( imread( 'images\\jpg\\poweroutput.jpg' ), [10, 10, 25, 25] );"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Relay"
+      Ports		      [2]
+      Position		      [40, 654, 85, 696]
+      FunctionName	      "sfun_Relay"
+      Parameters	      "num"
+      MaskType		      "Relay Object"
+      MaskDescription	      "The Relay object behaves like a physical relay:\nYou can chose the relay state by switching the input signal to 1 or 0.\n\n-- Input ports --\nInput 1: ComId\nInput 2: Relay set value\n-- Output ports --\nNone"
+      MaskPromptString	      "Relay number"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "num=@1;"
+      MaskDisplay	      "image( imread( 'images\\jpg\\relay_empty.jpg' ), [10, 10, 25, 25] );\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "0"
+    }
+  }
+}

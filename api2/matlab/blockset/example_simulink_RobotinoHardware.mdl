@@ -1,0 +1,2410 @@
+Model {
+  Name			  "example_simulink_RobotinoHardware"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.114"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  on
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Jul 31 14:54:17 2008"
+  Creator		  "verbeek"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "verbeek"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jan 11 11:24:39 2016"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:114>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "100"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "1"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "example_simulink_RobotinoHardware"
+    Location		    [383, 276, 2173, 1209]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput0"
+      Ports		      [1, 1]
+      Position		      [905, 723, 980, 757]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput1"
+      Ports		      [1, 1]
+      Position		      [905, 778, 980, 812]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput2"
+      Ports		      [1, 1]
+      Position		      [905, 838, 980, 872]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput3"
+      Ports		      [1, 1]
+      Position		      [905, 893, 980, 927]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput4"
+      Ports		      [1, 1]
+      Position		      [905, 953, 980, 987]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput5"
+      Ports		      [1, 1]
+      Position		      [905, 1008, 980, 1042]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput6"
+      Ports		      [1, 1]
+      Position		      [905, 1068, 980, 1102]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AnalogInput7"
+      Ports		      [1, 1]
+      Position		      [905, 1123, 980, 1157]
+      SourceBlock	      "lib_robotinohardware/AnalogInput"
+      SourceType	      "AnalogInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "AnalogInputs"
+      Ports		      [8]
+      Position		      [1230, 917, 1260, 958]
+      Floating		      off
+      Location		      [410, 154, 861, 1013]
+      Open		      off
+      NumInputPorts	      "8"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
+	axes7			"%<SignalLabel>"
+	axes8			"%<SignalLabel>"
+      }
+      YMin		      "0~0~0~0~0~0~0~0"
+      YMax		      "2.5~2.5~2.5~2.5~2.5~2.5~2.5~2.5"
+      SaveName		      "ScopeData7"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bumper"
+      Ports		      [1, 1]
+      Position		      [200, 306, 250, 404]
+      SourceBlock	      "lib_robotinohardware/Bumper"
+      SourceType	      "Bumper Object"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Camera"
+      Ports		      [2, 3]
+      Position		      [420, 397, 475, 493]
+      SourceBlock	      "lib_robotinohardware/Camera"
+      SourceType	      "Camera Object"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Close"
+      Ports		      [2, 1]
+      Position		      [640, 632, 670, 668]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Collission"
+      Ports		      [1]
+      Position		      [275, 340, 365, 370]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Com"
+      Ports		      [0, 1]
+      Position		      [20, 16, 80, 74]
+      SourceBlock	      "lib_robotinohardware/Com"
+      SourceType	      "Com Object"
+      ip		      "'192.168.1.241'"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Current [A]"
+      Ports		      [1]
+      Position		      [300, 2025, 390, 2055]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 2]
+      Position		      [350, 451, 355, 489]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      Ports		      [1, 2]
+      Position		      [975, 1941, 980, 1979]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux10"
+      Ports		      [1, 2]
+      Position		      [225, 656, 230, 694]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux2"
+      Ports		      [1, 2]
+      Position		      [620, 581, 625, 619]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux3"
+      Ports		      [1, 9]
+      Position		      [485, 1475, 490, 1515]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "9"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux4"
+      Ports		      [1, 2]
+      Position		      [620, 631, 625, 669]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux6"
+      Ports		      [1, 2]
+      Position		      [415, 96, 420, 134]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux7"
+      Ports		      [1, 8]
+      Position		      [605, 917, 610, 958]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "8"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux8"
+      Ports		      [1, 8]
+      Position		      [1205, 917, 1210, 958]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "8"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux9"
+      Ports		      [1, 2]
+      Position		      [230, 596, 235, 634]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput0"
+      Ports		      [1, 1]
+      Position		      [315, 727, 390, 763]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput1"
+      Ports		      [1, 1]
+      Position		      [315, 782, 390, 818]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput2"
+      Ports		      [1, 1]
+      Position		      [315, 837, 390, 873]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput3"
+      Ports		      [1, 1]
+      Position		      [315, 892, 390, 928]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput4"
+      Ports		      [1, 1]
+      Position		      [315, 952, 390, 988]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput5"
+      Ports		      [1, 1]
+      Position		      [315, 1007, 390, 1043]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput6"
+      Ports		      [1, 1]
+      Position		      [315, 1067, 390, 1103]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput7"
+      Ports		      [1, 1]
+      Position		      [315, 1132, 390, 1168]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "DigitalInputs"
+      Ports		      [8]
+      Position		      [630, 917, 660, 958]
+      Floating		      off
+      Location		      [494, 161, 945, 1020]
+      Open		      off
+      NumInputPorts	      "8"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
+	axes7			"%<SignalLabel>"
+	axes8			"%<SignalLabel>"
+      }
+      YMin		      "0~0~0~0~0~0~0~0"
+      YMax		      "2.5~2.5~2.5~2.5~2.5~2.5~2.5~2.5"
+      SaveName		      "ScopeData6"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 1"
+      Ports		      [1, 1]
+      Position		      [320, 1300, 395, 1330]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 2"
+      Ports		      [1, 1]
+      Position		      [320, 1345, 395, 1375]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 3"
+      Ports		      [1, 1]
+      Position		      [320, 1390, 395, 1420]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 4"
+      Ports		      [1, 1]
+      Position		      [320, 1435, 395, 1465]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "3"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 5"
+      Ports		      [1, 1]
+      Position		      [320, 1480, 395, 1510]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "4"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 6"
+      Ports		      [1, 1]
+      Position		      [320, 1525, 395, 1555]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "5"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 7"
+      Ports		      [1, 1]
+      Position		      [320, 1570, 395, 1600]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "6"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 8"
+      Ports		      [1, 1]
+      Position		      [320, 1615, 395, 1645]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "7"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DistanceSensor 9"
+      Ports		      [1, 1]
+      Position		      [320, 1660, 395, 1690]
+      SourceBlock	      "lib_robotinohardware/DistanceSensor"
+      SourceType	      "DistanceSensor"
+      num		      "8"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Distances"
+      Ports		      [9]
+      Position		      [530, 1475, 560, 1515]
+      Floating		      off
+      Location		      [406, 138, 857, 997]
+      Open		      off
+      NumInputPorts	      "9"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
+	axes7			"%<SignalLabel>"
+	axes8			"%<SignalLabel>"
+	axes9			"%<SignalLabel>"
+      }
+      YMin		      "0~0~0~0~0~0~0~0~0"
+      YMax		      "2.5~2.5~2.5~2.5~2.5~2.5~2.5~2.5~2.5"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DriveSystem"
+      Ports		      [4]
+      Position		      [925, 28, 1015, 87]
+      SourceBlock	      "lib_robotinohardware/DriveSystem"
+      SourceType	      "DriveSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Enable"
+      Ports		      [2, 1]
+      Position		      [640, 582, 670, 618]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "EncoderInput"
+      Ports		      [2, 2]
+      Position		      [870, 272, 960, 323]
+      SourceBlock	      "lib_robotinohardware/EncoderInput"
+      SourceType	      "EncoderInput"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gripper"
+      Ports		      [3, 2]
+      Position		      [700, 569, 785, 631]
+      SourceBlock	      "lib_robotinohardware/Gripper"
+      SourceType	      "Gripper"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Monitor"
+      Ports		      [2, 1]
+      Position		      [370, 452, 400, 488]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      Ports		      [2, 1]
+      Position		      [70, 451, 75, 489]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux5"
+      Ports		      [8, 1]
+      Position		      [515, 725, 525, 1150]
+      ShowName		      off
+      Inputs		      "8"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux6"
+      Ports		      [8, 1]
+      Position		      [1135, 918, 1140, 957]
+      ShowName		      off
+      Inputs		      "8"
+      DisplayOption	      "signals"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux7"
+      Ports		      [9, 1]
+      Position		      [415, 1300, 425, 1690]
+      ShowName		      off
+      Inputs		      "9"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Odometry"
+      Ports		      [5, 3]
+      Position		      [1145, 1927, 1230, 1993]
+      SourceBlock	      "lib_robotinohardware/Odometry"
+      SourceType	      "Odometry"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "On/Off"
+      Ports		      [2, 1]
+      Position		      [250, 597, 280, 633]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "On/Off1"
+      Ports		      [2, 1]
+      Position		      [245, 657, 275, 693]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PowerManagement"
+      Ports		      [1, 2]
+      Position		      [160, 1984, 245, 2026]
+      SourceBlock	      "lib_robotinohardware/PowerManagement"
+      SourceType	      "PowerManagement"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "PowerOut Current"
+      Ports		      [1]
+      Position		      [1280, 540, 1370, 570]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PowerOutput"
+      Ports		      [2, 1]
+      Position		      [1175, 537, 1250, 573]
+      SourceBlock	      "lib_robotinohardware/PowerOutput"
+      SourceType	      "PowerOutput"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Relay"
+      Ports		      [2]
+      Position		      [315, 584, 360, 626]
+      SourceBlock	      "lib_robotinohardware/Relay"
+      SourceType	      "Relay Object"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Relay1"
+      Ports		      [2]
+      Position		      [315, 644, 360, 686]
+      SourceBlock	      "lib_robotinohardware/Relay"
+      SourceType	      "Relay Object"
+      num		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Reset position"
+      Ports		      [2, 1]
+      Position		      [435, 97, 465, 133]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Set"
+      Ports		      [2, 1]
+      Position		      [995, 1942, 1025, 1978]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "SetPoint"
+      Position		      [1060, 550, 1125, 580]
+      NamePlacement	      "alternate"
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave"
+      Ports		      [0, 1]
+      Position		      [190, 190, 220, 220]
+      SineType		      "Time based"
+      Amplitude		      "0.5"
+      Bias		      "0.5"
+      Frequency		      "0.1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Voltage [V]"
+      Ports		      [1]
+      Position		      [300, 1980, 390, 2010]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Zero \nposition"
+      Position		      [1040, 1960, 1070, 1990]
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "closed"
+      Ports		      [1]
+      Position		      [820, 600, 910, 630]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "off"
+      Position		      [15, 445, 45, 475]
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "on"
+      Position		      [15, 490, 45, 520]
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "opened"
+      Ports		      [1]
+      Position		      [820, 555, 910, 585]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "phi"
+      Ports		      [1]
+      Position		      [1260, 1995, 1350, 2025]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "vx, target"
+      Ports		      [1]
+      Position		      [250, 225, 340, 255]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "vy, target"
+      Position		      [355, 225, 385, 255]
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "w, target"
+      Position		      [410, 225, 440, 255]
+      Value		      "0.1"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "x"
+      Ports		      [1]
+      Position		      [1260, 1900, 1350, 1930]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "y"
+      Ports		      [1]
+      Position		      [1260, 1945, 1350, 1975]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Floating\nScope"
+      Ports		      []
+      Position		      [185, 14, 215, 46]
+      IOType		      "viewer"
+      Floating		      on
+      Location		      [478, 374, 802, 613]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      SaveName		      "ScopeData4"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Floating\nScope1"
+      Ports		      []
+      Position		      [185, 14, 215, 46]
+      IOType		      "viewer"
+      Floating		      on
+      Location		      [376, 294, 700, 533]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      YMin		      "-1"
+      YMax		      "1"
+      SaveName		      "ScopeData5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Line {
+      SrcBlock		      "Com"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -10]
+	DstBlock		"DriveSystem"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 240]
+	Branch {
+	  Points		  [0, 70]
+	  Branch {
+	    Points		    [0, 65]
+	    Branch {
+	      Points		      [0, 95]
+	      Branch {
+		Points			[0, 35]
+		Branch {
+		  Points		  [575, 0; 0, 30]
+		  DstBlock		  "Gripper"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 30]
+		  Branch {
+		    Points		    [195, 0]
+		    DstBlock		    "Relay"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Labels		    [1, 0]
+		    Points		    [0, 70]
+		    Branch {
+		    Points		    [195, 0]
+		    DstBlock		    "Relay1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 70]
+		    Branch {
+		    Points		    [0, 25]
+		    Branch {
+		    DstBlock		    "DigitalInput0"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "DigitalInput1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    Points		    [0, 0]
+		    DstBlock		    "DigitalInput2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "DigitalInput3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    Branch {
+		    DstBlock		    "DigitalInput4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "DigitalInput5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    Branch {
+		    DstBlock		    "DigitalInput6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65]
+		    Branch {
+		    DstBlock		    "DigitalInput7"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 165]
+		    Branch {
+		    DstBlock		    "DistanceSensor 1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 7"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "DistanceSensor 8"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    Points		    [0, 275]
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "PowerManagement"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [845, 0; 0, -20]
+		    DstBlock		    "Odometry"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "DistanceSensor 9"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    Branch {
+		    Points		    [0, -5; 735, 0; 0, 25]
+		    Branch {
+		    DstBlock		    "AnalogInput0"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "AnalogInput1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    Branch {
+		    DstBlock		    "AnalogInput2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "AnalogInput3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    Branch {
+		    DstBlock		    "AnalogInput4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "AnalogInput5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    Branch {
+		    DstBlock		    "AnalogInput6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "AnalogInput7"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		    }
+		  }
+		}
+	      }
+	      Branch {
+		Points			[1030, 0; 0, 30]
+		DstBlock		"PowerOutput"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Camera"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Bumper"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  DstBlock		  "EncoderInput"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Sine Wave"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, 0]
+	DstBlock		"vx, target"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -15; 615, 0; 0, -140]
+	DstBlock		"DriveSystem"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Monitor"
+      SrcPort		      1
+      DstBlock		      "Camera"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "vy, target"
+      SrcPort		      1
+      Points		      [0, -30; 475, 0; 0, -145]
+      DstBlock		      "DriveSystem"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "w, target"
+      SrcPort		      1
+      Points		      [440, 0; 0, -160]
+      DstBlock		      "DriveSystem"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Bumper"
+      SrcPort		      1
+      DstBlock		      "Collission"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "off"
+      SrcPort		      1
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "on"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Monitor"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      Points		      [0, 0]
+      DstBlock		      "Monitor"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"Demux"
+	DstPort			1
+      }
+      Branch {
+	Points			[10, 0; 0, 90]
+	Branch {
+	  Points		  [500, 0; 0, 40]
+	  Branch {
+	    DstBlock		    "Demux2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Demux4"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  Points		  [0, 55]
+	  Branch {
+	    DstBlock		    "Demux9"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 60]
+	    Branch {
+	      Points		      [0, 1285]
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Demux10"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+      Branch {
+	Points			[10, 0; 0, -410; 280, 0; 0, 55]
+	DstBlock		"Demux6"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      2
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      3
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      4
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      5
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      6
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      7
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      8
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Demux3"
+      SrcPort		      9
+      Points		      [0, 0]
+      DstBlock		      "Distances"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "PowerManagement"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Voltage [V]"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PowerManagement"
+      SrcPort		      2
+      Points		      [35, 0]
+      DstBlock		      "Current [A]"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Set"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      Points		      [0, 0]
+      DstBlock		      "Set"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Zero \nposition"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	Points			[0, -15]
+	DstBlock		"Odometry"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 15]
+	DstBlock		"Odometry"
+	DstPort			5
+      }
+      Branch {
+	DstBlock		"Odometry"
+	DstPort			4
+      }
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Enable"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      2
+      Points		      [0, 0]
+      DstBlock		      "Enable"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Enable"
+      SrcPort		      1
+      DstBlock		      "Gripper"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux4"
+      SrcPort		      1
+      DstBlock		      "Close"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux4"
+      SrcPort		      2
+      DstBlock		      "Close"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Close"
+      SrcPort		      1
+      Points		      [5, 0; 0, -30]
+      DstBlock		      "Gripper"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      1
+      DstBlock		      "Reset position"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      2
+      DstBlock		      "Reset position"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Reset position"
+      SrcPort		      1
+      Points		      [345, 0; 0, 195]
+      DstBlock		      "EncoderInput"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PowerOutput"
+      SrcPort		      1
+      DstBlock		      "PowerOut Current"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SetPoint"
+      SrcPort		      1
+      DstBlock		      "PowerOutput"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      1
+      DstBlock		      "DigitalInputs"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      2
+      DstBlock		      "DigitalInputs"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      3
+      DstBlock		      "DigitalInputs"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      4
+      DstBlock		      "DigitalInputs"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      5
+      DstBlock		      "DigitalInputs"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      6
+      DstBlock		      "DigitalInputs"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      7
+      DstBlock		      "DigitalInputs"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      8
+      DstBlock		      "DigitalInputs"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      1
+      DstBlock		      "AnalogInputs"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      2
+      DstBlock		      "AnalogInputs"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      3
+      DstBlock		      "AnalogInputs"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      4
+      DstBlock		      "AnalogInputs"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      5
+      DstBlock		      "AnalogInputs"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      6
+      DstBlock		      "AnalogInputs"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      7
+      DstBlock		      "AnalogInputs"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      8
+      DstBlock		      "AnalogInputs"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Mux6"
+      SrcPort		      1
+      DstBlock		      "Demux8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gripper"
+      SrcPort		      1
+      Points		      [10, 0; 0, -15]
+      DstBlock		      "opened"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gripper"
+      SrcPort		      2
+      DstBlock		      "closed"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Set"
+      SrcPort		      1
+      Points		      [0, -15]
+      DstBlock		      "Odometry"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Odometry"
+      SrcPort		      1
+      Points		      [5, 0; 0, -25]
+      DstBlock		      "x"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Odometry"
+      SrcPort		      2
+      Points		      [0, 0]
+      DstBlock		      "y"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Odometry"
+      SrcPort		      3
+      Points		      [5, 0; 0, 30]
+      DstBlock		      "phi"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux9"
+      SrcPort		      1
+      DstBlock		      "On/Off"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux9"
+      SrcPort		      2
+      DstBlock		      "On/Off"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "On/Off"
+      SrcPort		      1
+      DstBlock		      "Relay"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "On/Off1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      2
+      Points		      [0, 0]
+      DstBlock		      "On/Off1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "On/Off1"
+      SrcPort		      1
+      DstBlock		      "Relay1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "AnalogInput0"
+      SrcPort		      1
+      Points		      [65, 0; 0, 180]
+      DstBlock		      "Mux6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "AnalogInput1"
+      SrcPort		      1
+      Points		      [55, 0; 0, 130]
+      DstBlock		      "Mux6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "AnalogInput2"
+      SrcPort		      1
+      Points		      [45, 0; 0, 75]
+      DstBlock		      "Mux6"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "AnalogInput3"
+      SrcPort		      1
+      Points		      [35, 0; 0, 25]
+      DstBlock		      "Mux6"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "AnalogInput4"
+      SrcPort		      1
+      Points		      [35, 0; 0, -30]
+      DstBlock		      "Mux6"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "AnalogInput5"
+      SrcPort		      1
+      Points		      [45, 0; 0, -80]
+      DstBlock		      "Mux6"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "AnalogInput6"
+      SrcPort		      1
+      Points		      [55, 0; 0, -135]
+      DstBlock		      "Mux6"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "AnalogInput7"
+      SrcPort		      1
+      Points		      [65, 0; 0, -185]
+      DstBlock		      "Mux6"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 1"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 2"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 3"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 4"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 5"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 6"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 7"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 8"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "DistanceSensor 9"
+      SrcPort		      1
+      DstBlock		      "Mux7"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Mux7"
+      SrcPort		      1
+      DstBlock		      "Demux3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DigitalInput0"
+      SrcPort		      1
+      DstBlock		      "Mux5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DigitalInput1"
+      SrcPort		      1
+      DstBlock		      "Mux5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "DigitalInput2"
+      SrcPort		      1
+      DstBlock		      "Mux5"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "DigitalInput3"
+      SrcPort		      1
+      DstBlock		      "Mux5"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DigitalInput4"
+      SrcPort		      1
+      Points		      [50, 0; 0, -5]
+      DstBlock		      "Mux5"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "DigitalInput5"
+      SrcPort		      1
+      Points		      [50, 0; 0, -5]
+      DstBlock		      "Mux5"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "DigitalInput6"
+      SrcPort		      1
+      Points		      [50, 0; 0, -10]
+      DstBlock		      "Mux5"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "DigitalInput7"
+      SrcPort		      1
+      Points		      [105, 0]
+      DstBlock		      "Mux5"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Mux5"
+      SrcPort		      1
+      DstBlock		      "Demux7"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "PowerOutput setting is disabled \nif you use a Gripper object !"
+      Position		      [1233, 518]
+    }
+  }
+}

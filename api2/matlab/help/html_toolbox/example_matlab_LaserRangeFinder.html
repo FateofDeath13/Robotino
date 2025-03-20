@@ -1,0 +1,275 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>LaserRangeFinder Example</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-04">
+      <meta name="m-file" content="example_matlab_LaserRangeFinder"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>LaserRangeFinder Example</h1>
+         <introduction>
+            <p>This example illustrates the use of the Laser Range Finder on Robotino. If Robotino is placed in an obstacle cluttered environment
+               then it moves around avoiding the obstacles. The example runs for 60 seconds.
+            </p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#2">Description</a></li>
+               <li><a href="#3">Code explanation</a></li>
+            </ul>
+         </div>
+         <p><img vspace="5" hspace="5" src="../images/laserrangefinder_example.png"> </p>
+         <h2>Description<a name="2"></a></h2>
+         <p>Robotino can be equipped with a very precise Hokuyo URG-04LX-UG01 laser scanner. In this example we read the distance readings
+            from the laser range finder. Based on the readings from the laser range finder, we can find out if Robotino is approaching
+            an obstacle or not. In case it is, then we stop Robotino and let it rotate until it is clear of obstacles. If no obstacle
+            is detected then we let Robotino move forward with a constant velocity.
+         </p>
+         <h2>Code explanation<a name="3"></a></h2>
+         <p>First we will need to construct objects that we will be requiring in our program. In this program, we will require objects
+            of <tt>Com</tt>, <tt>OmniDrive</tt>, <tt>LaserRangeFinder</tt> and <tt>Bumper</tt>. This is done as follows.
+         </p><pre class="codeinput">ComId = Com_construct;
+OmniDriveId = OmniDrive_construct;
+LaserRangeFinderId = LaserRangeFinder_construct;
+BumperId = Bumper_construct;
+</pre><p>Upon successful contruction of the objects, an Id is returned for each object. This Id is used later when communicating with
+            Robotino. Now we need to set the address of Robotino and then connect to it. This is done as follows.
+         </p>
+         <p><b>Note the IP address and port number might be different</b></p><pre class="codeinput">Com_setAddress(ComId, <span class="string">'127.0.0.1:8081'</span>);
+Com_connect(ComId);
+</pre><p>Once we are connected to Robotino, we need to bind each of the object we created to Robotino using the ComId. This can be
+            done as follows.
+         </p><pre class="codeinput">OmniDrive_setComId(OmniDriveId, ComId);
+LaserRangeFinder_setComId(LaserRangeFinderId, ComId);
+Bumper_setComId(BumperId, ComId);
+</pre><p>We create two vectors, ranges and intensities of sizes 1000 each and initialize them with zeors. We then start our "stop watch"
+            to limit the example execution to 60 seconds.
+         </p><pre class="codeinput">ranges = zeros(1000,1);
+intensities = zeros(1000,1);
+
+tStart = tic;
+</pre><p>We initiate a while loop based on the condition that Robotino's bumper hasn't detected a collision. Here we obtain the laser
+            range finder readings and based on a simple comparison decide whether if we are approaching an obstacle or not. In case Robotino
+            is approaching one, using the OmniDrive_setVelocity function we stop the robot and make it rotate. In case there is no obstacle
+            in front of Robotino then using the same OmniDrive_setVelocity function, we let Robotino continue moving forward.
+         </p><pre class="codeinput"><span class="keyword">while</span> (Bumper_value(BumperId) ~= 1)
+    tElapsed = toc(tStart);
+    <span class="comment">% If 60 seconds are elapsed then exit while loop</span>
+    <span class="keyword">if</span>(tElapsed &gt;= 60 )
+        <span class="keyword">break</span>;
+    <span class="keyword">end</span>;
+
+    <span class="keyword">if</span> (LaserRangeFinder_grab(LaserRangeFinderId) == 1)
+        [ success, seq, stamp, angle_min, angle_max, angle_increment, time_increment, scan_time, range_min, range_max, ranges, numRanges, intensities, numIntensities ] = LaserRangeFinder_getReadings( LaserRangeFinderId );
+        <span class="keyword">for</span> i=1:100
+            <span class="comment">% The number of readings we receive are 666 but we need to</span>
+            <span class="comment">% consider the readings between 283 - 383 as these lie in front</span>
+            <span class="comment">% of Robotino.</span>
+            index = i + 283;
+            <span class="keyword">if</span>( 0.8 &gt;= ranges(index))
+                <span class="comment">% Obstacle detected ahead.</span>
+                OmniDrive_setVelocity(OmniDriveId, 0, 0 ,100);
+                <span class="keyword">break</span>;
+            <span class="keyword">else</span>
+                <span class="comment">% No obstacle detected.</span>
+                OmniDrive_setVelocity(OmniDriveId, 500, 0 ,0);
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><p>Once 60 seconds have been elapsed and the while loop is exited. We will need to disconnect from Robotino as follows.</p><pre class="codeinput">Com_disconnect(ComId);
+</pre><p>It is also recommended to destroy all objects that we created for our example. This can be done as follows.</p><pre class="codeinput">LaserRangeFinder_destroy(LaserRangeFinderId);
+Bumper_destroy(BumperId);
+OmniDrive_destroy(OmniDriveId);
+Com_destroy(ComId);
+</pre><p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% LaserRangeFinder Example
+% This example illustrates the use of the Laser Range Finder on Robotino. If
+% Robotino is placed in an obstacle cluttered environment then it moves
+% around avoiding the obstacles. The example runs for 60 seconds.
+
+%%
+% 
+% <<../images/laserrangefinder_example.png>>
+%
+
+%% Description
+% Robotino can be equipped with a very precise Hokuyo URG-04LX-UG01 laser
+% scanner. In this example we read the distance readings from the laser
+% range finder. Based on the readings from the laser range finder, we can
+% find out if Robotino is approaching an obstacle or not. In case it is,
+% then we stop Robotino and let it rotate until it is clear of obstacles.
+% If no obstacle is detected then we let Robotino move forward with a
+% constant velocity.
+
+%% Code explanation
+% First we will need to construct objects that we will be requiring in our
+% program. In this program, we will require objects of |Com|, |OmniDrive|,
+% |LaserRangeFinder| and |Bumper|. This is done as follows.
+
+ComId = Com_construct;
+OmniDriveId = OmniDrive_construct;
+LaserRangeFinderId = LaserRangeFinder_construct;
+BumperId = Bumper_construct;
+
+
+%%
+% Upon successful contruction of the objects, an Id is returned for each
+% object. This Id is used later when communicating with Robotino. Now we
+% need to set the address of Robotino and then connect to it. This is done
+% as follows.
+%%
+% *Note the IP address and port number might be different*
+
+Com_setAddress(ComId, '127.0.0.1:8081');
+Com_connect(ComId);
+
+%%
+% 
+% Once we are connected to Robotino, we need to bind each of the object we
+% created to Robotino using the ComId. This can be done as follows.
+% 
+
+OmniDrive_setComId(OmniDriveId, ComId);
+LaserRangeFinder_setComId(LaserRangeFinderId, ComId);
+Bumper_setComId(BumperId, ComId);
+
+%%
+% 
+% We create two vectors, ranges and intensities of sizes 1000 each and initialize them with zeors. 
+% We then start our "stop watch" to limit the example execution to 60 seconds.
+% 
+ranges = zeros(1000,1);
+intensities = zeros(1000,1);
+
+tStart = tic;
+
+%%
+% 
+% We initiate a while loop based on the condition that Robotino's bumper
+% hasn't detected a collision. Here we obtain the laser range finder readings and based on a simple
+% comparison decide whether if we are approaching an obstacle or not. In
+% case Robotino is approaching one, using the OmniDrive_setVelocity function we stop
+% the robot and make it rotate. In case there is no obstacle in front of
+% Robotino then using the same OmniDrive_setVelocity function, we let
+% Robotino continue moving forward.
+%
+
+while (Bumper_value(BumperId) ~= 1)
+    tElapsed = toc(tStart);
+    % If 60 seconds are elapsed then exit while loop
+    if(tElapsed >= 60 )
+        break;
+    end;
+    
+    if (LaserRangeFinder_grab(LaserRangeFinderId) == 1)
+        [ success, seq, stamp, angle_min, angle_max, angle_increment, time_increment, scan_time, range_min, range_max, ranges, numRanges, intensities, numIntensities ] = LaserRangeFinder_getReadings( LaserRangeFinderId );
+        for i=1:100
+            % The number of readings we receive are 666 but we need to
+            % consider the readings between 283 - 383 as these lie in front
+            % of Robotino.
+            index = i + 283;
+            if( 0.8 >= ranges(index))
+                % Obstacle detected ahead.
+                OmniDrive_setVelocity(OmniDriveId, 0, 0 ,100);
+                break;
+            else
+                % No obstacle detected.
+                OmniDrive_setVelocity(OmniDriveId, 500, 0 ,0);
+            end 
+        end
+    end
+end
+
+%%
+% 
+% Once 60 seconds have been elapsed and the while loop is exited. We will
+% need to disconnect from Robotino as follows.
+% 
+
+Com_disconnect(ComId);
+
+%%
+% 
+% It is also recommended to destroy all objects that we created for our
+% example. This can be done as follows.
+% 
+
+LaserRangeFinder_destroy(LaserRangeFinderId);
+Bumper_destroy(BumperId);
+OmniDrive_destroy(OmniDriveId);
+Com_destroy(ComId);
+##### SOURCE END #####
+-->
+   </body>
+</html>

@@ -1,0 +1,233 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>LaserRangeFinder_getReadings</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-03">
+      <meta name="m-file" content="LaserRangeFinder_getReadings"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>LaserRangeFinder_getReadings</h1>
+         <introduction>
+            <p>Obtain readings from Robotino's laser rangefinder Do not forget to call <a href="LaserRangeFinder_grab.html">LaserRangeFinder_grab</a> first Make sure that the ranges and intensities arrays are at least 1000 in size
+            </p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#1">Function</a></li>
+               <li><a href="#2">Example Usage</a></li>
+               <li><a href="#3">See also</a></li>
+            </ul>
+         </div>
+         <h2>Function<a name="1"></a></h2>
+         <p><tt>[ success, seq, stamp, angle_min, angle_max, angle_increment, time_increment, scan_time, range_min, range_max, ranges, numRanges,
+               intensities, numIntensities ] = LaserRangeFinder_getReadings( LaserRangeFinderId )</tt></p>
+         <p>LaserRangeFinderId is the id of the LaserRangeFinder object</p>
+         <h2>Example Usage<a name="2"></a></h2>
+         <p><tt>[ success, seq, stamp, angle_min, angle_max, angle_increment, time_increment, scan_time, range_min, range_max, ranges, numRanges,
+               intensities, numIntensities ] = LaserRangeFinder_getReadings( 0 )</tt></p>
+         <h2>See also<a name="3"></a></h2>
+         <p><a href="example_matlab_LaserRangeFinder.html">LaserRangeFinder Example</a></p><pre class="codeinput"><span class="keyword">function</span> [ success, seq, stamp, angle_min, angle_max, angle_increment, time_increment, scan_time, range_min, range_max, ranges, numRanges, intensities, numIntensities ] = LaserRangeFinder_getReadings( LaserRangeFinderId )
+<span class="keyword">if</span> ( init )
+    seq_Buffer = 0;
+    seq_BufferPtr = libpointer( <span class="string">'uint32Ptr'</span>, seq_Buffer);
+
+    stamp_Buffer = 0;
+    stamp_BufferPtr = libpointer( <span class="string">'uint32Ptr'</span>, stamp_Buffer);
+
+    angle_min_Buffer = 0.0;
+    angle_min_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, angle_min_Buffer);
+
+    angle_max_Buffer = 0.0;
+    angle_max_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, angle_max_Buffer);
+
+    angle_increment_Buffer = 0.0;
+    angle_increment_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, angle_increment_Buffer);
+
+    time_increment_Buffer = 0.0;
+    time_increment_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, time_increment_Buffer);
+
+    scan_time_Buffer = 0.0;
+    scan_time_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, scan_time_Buffer);
+
+    range_min_Buffer = 0.0;
+    range_min_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, range_min_Buffer);
+
+    range_max_Buffer = 0.0;
+    range_max_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, range_max_Buffer);
+
+    ranges_Buffer = zeros(1000,1);
+    ranges_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, ranges_Buffer);
+
+    numRanges_Buffer = 0;
+    numRanges_BufferPtr = libpointer( <span class="string">'uint32Ptr'</span>, numRanges_Buffer);
+
+    intensities_Buffer = zeros(1000,1);
+    intensities_BufferPtr = libpointer( <span class="string">'singlePtr'</span>, intensities_Buffer);
+
+    numIntensities_Buffer = 0;
+    numIntensities_BufferPtr = libpointer( <span class="string">'uint32Ptr'</span>, numIntensities_Buffer);
+
+    success = calllib( <span class="string">'rec_robotino_com_c'</span>,<span class="string">'LaserRangeFinder_getReadings'</span>, LaserRangeFinderId, seq_BufferPtr, stamp_BufferPtr, angle_min_BufferPtr, angle_max_BufferPtr, angle_increment_BufferPtr, time_increment_BufferPtr, scan_time_BufferPtr, range_min_BufferPtr, range_max_BufferPtr, ranges_BufferPtr, numRanges_BufferPtr, intensities_BufferPtr, numIntensities_BufferPtr);
+    seq = uint32( get( seq_BufferPtr, <span class="string">'Value'</span> ) );
+    stamp = uint32( get( stamp_BufferPtr, <span class="string">'Value'</span> ) );
+    angle_min = single( get( angle_min_BufferPtr, <span class="string">'Value'</span> ) );
+    angle_max = single( get( angle_max_BufferPtr, <span class="string">'Value'</span> ) );
+    angle_increment = single( get( angle_increment_BufferPtr, <span class="string">'Value'</span> ) );
+    time_increment = single( get( time_increment_BufferPtr, <span class="string">'Value'</span> ) );
+    scan_time = single( get( scan_time_BufferPtr, <span class="string">'Value'</span> ) );
+    range_min = single( get( range_min_BufferPtr, <span class="string">'Value'</span> ) );
+    range_max = single( get( range_max_BufferPtr, <span class="string">'Value'</span> ) );
+    ranges = single( get( ranges_BufferPtr, <span class="string">'Value'</span> ) );
+    numRanges = uint32( get( numRanges_BufferPtr, <span class="string">'Value'</span> ) );
+    intensities = single( get( intensities_BufferPtr, <span class="string">'Value'</span> ) );
+    numIntensities = uint32( get( numIntensities_BufferPtr, <span class="string">'Value'</span> ) );
+<span class="keyword">end</span>;
+</pre><p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% LaserRangeFinder_getReadings
+% Obtain readings from Robotino's laser rangefinder
+% Do not forget to call <LaserRangeFinder_grab.html LaserRangeFinder_grab> first
+% Make sure that the ranges and intensities arrays are at least 1000 in
+% size
+%% Function 
+% |[ success, seq, stamp, angle_min, angle_max, angle_increment,
+% time_increment, scan_time, range_min, range_max, ranges, numRanges,
+% intensities, numIntensities ] = LaserRangeFinder_getReadings(
+% LaserRangeFinderId )|
+%
+% LaserRangeFinderId is the id of the LaserRangeFinder object
+%% Example Usage 
+% |[ success, seq, stamp, angle_min, angle_max, angle_increment,
+% time_increment, scan_time, range_min, range_max, ranges, numRanges,
+% intensities, numIntensities ] = LaserRangeFinder_getReadings( 0 )|
+%% See also
+% <example_matlab_LaserRangeFinder.html LaserRangeFinder Example>
+function [ success, seq, stamp, angle_min, angle_max, angle_increment, time_increment, scan_time, range_min, range_max, ranges, numRanges, intensities, numIntensities ] = LaserRangeFinder_getReadings( LaserRangeFinderId )
+if ( init )
+    seq_Buffer = 0;
+    seq_BufferPtr = libpointer( 'uint32Ptr', seq_Buffer);
+    
+    stamp_Buffer = 0;
+    stamp_BufferPtr = libpointer( 'uint32Ptr', stamp_Buffer);
+    
+    angle_min_Buffer = 0.0;
+    angle_min_BufferPtr = libpointer( 'singlePtr', angle_min_Buffer);
+    
+    angle_max_Buffer = 0.0;
+    angle_max_BufferPtr = libpointer( 'singlePtr', angle_max_Buffer);
+    
+    angle_increment_Buffer = 0.0;
+    angle_increment_BufferPtr = libpointer( 'singlePtr', angle_increment_Buffer);
+    
+    time_increment_Buffer = 0.0;
+    time_increment_BufferPtr = libpointer( 'singlePtr', time_increment_Buffer);
+    
+    scan_time_Buffer = 0.0;
+    scan_time_BufferPtr = libpointer( 'singlePtr', scan_time_Buffer);
+    
+    range_min_Buffer = 0.0;
+    range_min_BufferPtr = libpointer( 'singlePtr', range_min_Buffer);
+    
+    range_max_Buffer = 0.0;
+    range_max_BufferPtr = libpointer( 'singlePtr', range_max_Buffer);
+    
+    ranges_Buffer = zeros(1000,1);
+    ranges_BufferPtr = libpointer( 'singlePtr', ranges_Buffer);
+    
+    numRanges_Buffer = 0;
+    numRanges_BufferPtr = libpointer( 'uint32Ptr', numRanges_Buffer);
+    
+    intensities_Buffer = zeros(1000,1);
+    intensities_BufferPtr = libpointer( 'singlePtr', intensities_Buffer);
+    
+    numIntensities_Buffer = 0;
+    numIntensities_BufferPtr = libpointer( 'uint32Ptr', numIntensities_Buffer);
+    
+    success = calllib( 'rec_robotino_com_c','LaserRangeFinder_getReadings', LaserRangeFinderId, seq_BufferPtr, stamp_BufferPtr, angle_min_BufferPtr, angle_max_BufferPtr, angle_increment_BufferPtr, time_increment_BufferPtr, scan_time_BufferPtr, range_min_BufferPtr, range_max_BufferPtr, ranges_BufferPtr, numRanges_BufferPtr, intensities_BufferPtr, numIntensities_BufferPtr);
+    seq = uint32( get( seq_BufferPtr, 'Value' ) );
+    stamp = uint32( get( stamp_BufferPtr, 'Value' ) );
+    angle_min = single( get( angle_min_BufferPtr, 'Value' ) );
+    angle_max = single( get( angle_max_BufferPtr, 'Value' ) );
+    angle_increment = single( get( angle_increment_BufferPtr, 'Value' ) );
+    time_increment = single( get( time_increment_BufferPtr, 'Value' ) );
+    scan_time = single( get( scan_time_BufferPtr, 'Value' ) );
+    range_min = single( get( range_min_BufferPtr, 'Value' ) );
+    range_max = single( get( range_max_BufferPtr, 'Value' ) );
+    ranges = single( get( ranges_BufferPtr, 'Value' ) );
+    numRanges = uint32( get( numRanges_BufferPtr, 'Value' ) );
+    intensities = single( get( intensities_BufferPtr, 'Value' ) );
+    numIntensities = uint32( get( numIntensities_BufferPtr, 'Value' ) );
+end;
+##### SOURCE END #####
+-->
+   </body>
+</html>

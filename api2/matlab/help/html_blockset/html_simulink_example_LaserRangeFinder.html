@@ -1,0 +1,154 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>LaserRangeFinder Example</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-07">
+      <meta name="m-file" content="html_simulink_example_LaserRangeFinder"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>LaserRangeFinder Example</h1>
+         <introduction>
+            <p>This example illustrates the use of the Laser Range Finder on Robotino. If Robotino is placed in an obstacle cluttered environment
+               then it moves around avoiding the obstacles.
+            </p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#2">Blocks used in this example</a></li>
+               <li><a href="#3">Description</a></li>
+            </ul>
+         </div>
+         <p><img vspace="5" hspace="5" src="../images/laserrangefinder_example.png"> </p>
+         <h2>Blocks used in this example<a name="2"></a></h2>
+         <p><a href="html_simulink_Com.html">Com</a></p>
+         <p><a href="html_simulink_LaserRangeFinder.html">LaserRangeFinder</a></p>
+         <p><a href="html_simulink_Motor.html">Motor</a></p>
+         <p><a href="html_simulink_OmniDrive.html">OmniDrive</a></p>
+         <h2>Description<a name="3"></a></h2>
+         <p><img vspace="5" hspace="5" src="../images/simulink_example_laserrangefinder.png"> </p>
+         <p>Robotino can be equipped with a very precise Hokuyo URG-04LX-UG01 laser scanner. In this example we read the distance readings
+            from the laser range finder. We iterate through the ranges obtained from Robotino in a for iterator system (shown below).
+            The ranges values between 283 - 383 are considered as they lie in front of Robotino. We compare the readings with a value
+            of 0.8 (80 cm) and if it is less than 0.8 then we know we are approaching an obstacle.
+         </p>
+         <p><img vspace="5" hspace="5" src="../images/simulink_example_laserrangefinder2.png"> </p>
+         <p>In case it is, then we stop Robotino and let it rotate until it is clear of obstacles.</p>
+         <p><img vspace="5" hspace="5" src="../images/simulink_example_laserrangefinder3.png"> </p>
+         <p>If no obstacle is detected then we let Robotino move forward with a constant velocity.</p>
+         <p><img vspace="5" hspace="5" src="../images/simulink_example_laserrangefinder4.png"> </p>
+         <p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% LaserRangeFinder Example
+% This example illustrates the use of the Laser Range Finder on Robotino. If
+% Robotino is placed in an obstacle cluttered environment then it moves
+% around avoiding the obstacles.
+
+%%
+% 
+% <<../images/laserrangefinder_example.png>>
+%
+%% Blocks used in this example
+%
+% <html_simulink_Com.html Com>
+%
+% <html_simulink_LaserRangeFinder.html LaserRangeFinder>
+%
+% <html_simulink_Motor.html Motor>
+%
+% <html_simulink_OmniDrive.html OmniDrive>
+%% Description
+%
+% <<../images/simulink_example_laserrangefinder.png>>
+%
+% Robotino can be equipped with a very precise Hokuyo URG-04LX-UG01 laser
+% scanner. In this example we read the distance readings from the laser
+% range finder. We iterate through the ranges obtained from Robotino in a
+% for iterator system (shown below). The ranges values between 283 - 383
+% are considered as they lie in front of Robotino. We compare the readings
+% with a value of 0.8 (80 cm) and if it is less than 0.8 then we know we
+% are approaching an obstacle.
+%
+% <<../images/simulink_example_laserrangefinder2.png>>
+%
+% In case it is, then we stop Robotino and let it rotate until it is clear of obstacles.
+%
+% <<../images/simulink_example_laserrangefinder3.png>>
+%
+% If no obstacle is detected then we let Robotino move forward with a
+% constant velocity.
+%
+% <<../images/simulink_example_laserrangefinder4.png>>
+%
+##### SOURCE END #####
+-->
+   </body>
+</html>

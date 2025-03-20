@@ -1,0 +1,1317 @@
+Model {
+  Name			  "example_simulink_LineFollowerDigitalInput"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.48"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Feb 25 09:29:09 2010"
+  Creator		  "indorewala"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "ciesla"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Feb 27 11:49:14 2013"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:48>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "20"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    2
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  11
+	  Description		  "HDL Coder custom configuration component"
+	  Version		  "1.3.0"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    ""
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      ActionPort
+      InitializeStates	      "held"
+      ActionType	      "unset"
+    }
+    Block {
+      BlockType		      If
+      NumInputs		      "1"
+      IfExpression	      "u1 > 0"
+      ShowElse		      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "example_simulink_LineFollowerDigitalInput"
+    Location		    [353, 135, 1567, 1064]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Com"
+      Ports		      [0, 1]
+      Position		      [130, 76, 190, 134]
+      SourceBlock	      "lib_robotinohardware/Com"
+      SourceType	      "Com Object"
+      ip		      "'127.0.0.1'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput0"
+      Ports		      [1, 1]
+      Position		      [225, 302, 300, 338]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DigitalInput1"
+      Ports		      [1, 1]
+      Position		      [225, 367, 300, 403]
+      SourceBlock	      "lib_robotinohardware/DigitalInput"
+      SourceType	      "DigitalInput"
+      num		      "1"
+    }
+    Block {
+      BlockType		      If
+      Name		      "If"
+      Ports		      [1, 2]
+      Position		      [420, 336, 520, 374]
+      IfExpression	      "u1 == 1"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator"
+      Ports		      [2, 1]
+      Position		      [355, 337, 385, 368]
+      Operator		      "OR"
+      AllPortsSameDT	      off
+      OutDataTypeMode	      "boolean"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem01"
+      Ports		      [1, 0, 0, 0, 0, 0, 0, 1]
+      Position		      [570, 411, 650, 449]
+      NamePlacement	      "alternate"
+      FontName		      "Helvetica"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      System {
+	Name			"Subsystem01"
+	Location		[187, 177, 1092, 846]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ComID"
+	  Position		  [25, 78, 55, 92]
+	  FontName		  "Helvetica"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  ActionPort
+	  Name			  "Action"
+	  Position		  [20, 15, 94, 36]
+	  InitializeStates	  "reset"
+	  ActionType		  "else"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [215, 200, 245, 230]
+	  Value			  "100"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Motor"
+	  Ports			  [4, 3]
+	  Position		  [430, 93, 520, 152]
+	  SourceBlock		  "lib_robotinohardware/Motor"
+	  SourceType		  "Motor"
+	  num			  "0"
+	  kp			  "255"
+	  ki			  "255"
+	  kd			  "255"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Motor1"
+	  Ports			  [4, 3]
+	  Position		  [430, 183, 520, 242]
+	  SourceBlock		  "lib_robotinohardware/Motor"
+	  SourceType		  "Motor"
+	  num			  "1"
+	  kp			  "255"
+	  ki			  "255"
+	  kd			  "255"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Motor2"
+	  Ports			  [4, 3]
+	  Position		  [430, 268, 520, 327]
+	  SourceBlock		  "lib_robotinohardware/Motor"
+	  SourceType		  "Motor"
+	  num			  "2"
+	  kp			  "255"
+	  ki			  "255"
+	  kd			  "255"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "OmniDrive"
+	  Ports			  [4, 3]
+	  Position		  [290, 179, 345, 276]
+	  SourceBlock		  "lib_robotinohardware/OmniDrive"
+	  SourceType		  "OmniDrive Object"
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "OmniDrive"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "OmniDrive"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -85]
+	  DstBlock		  "Motor"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "OmniDrive"
+	  SrcPort		  2
+	  Points		  [35, 0; 0, -25]
+	  DstBlock		  "Motor1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "OmniDrive"
+	  SrcPort		  3
+	  Points		  [35, 0; 0, 30]
+	  DstBlock		  "Motor2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ComID"
+	  SrcPort		  1
+	  Points		  [95, 0]
+	  Branch {
+	    Points		    [10, 0; 0, 105]
+	    DstBlock		    "OmniDrive"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 15; 250, 0]
+	    Branch {
+	      DstBlock		      "Motor"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 90]
+	      DstBlock		      "Motor1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 175]
+	      DstBlock		      "Motor2"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem1"
+      Ports		      [2, 0, 0, 0, 0, 0, 0, 1]
+      Position		      [570, 291, 650, 329]
+      NamePlacement	      "alternate"
+      FontName		      "Helvetica"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      System {
+	Name			"Subsystem1"
+	Location		[350, 261, 1255, 930]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ComID"
+	  Position		  [25, 78, 55, 92]
+	  FontName		  "Helvetica"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "DI0"
+	  Position		  [25, 118, 55, 132]
+	  FontName		  "Helvetica"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  ActionPort
+	  Name			  "Action"
+	  Position		  [20, 15, 94, 36]
+	  InitializeStates	  "reset"
+	  ActionType		  "then"
+	}
+	Block {
+	  BlockType		  If
+	  Name			  "If"
+	  Ports			  [1, 2]
+	  Position		  [125, 106, 225, 144]
+	  IfExpression		  "u1 == 1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem01"
+	  Ports			  [1, 0, 0, 0, 0, 0, 0, 1]
+	  Position		  [270, 166, 350, 204]
+	  NamePlacement		  "alternate"
+	  FontName		  "Helvetica"
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  System {
+	    Name		    "Subsystem01"
+	    Location		    [187, 177, 1092, 846]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ComID"
+	      Position		      [25, 78, 55, 92]
+	      FontName		      "Helvetica"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      ActionPort
+	      Name		      "Action"
+	      Position		      [20, 15, 94, 36]
+	      InitializeStates	      "reset"
+	      ActionType	      "else"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [220, 280, 250, 310]
+	      Value		      "-10"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [215, 200, 245, 230]
+	      Value		      "100"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Motor"
+	      Ports		      [4, 3]
+	      Position		      [430, 93, 520, 152]
+	      SourceBlock	      "lib_robotinohardware/Motor"
+	      SourceType	      "Motor"
+	      num		      "0"
+	      kp		      "255"
+	      ki		      "255"
+	      kd		      "255"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Motor1"
+	      Ports		      [4, 3]
+	      Position		      [430, 183, 520, 242]
+	      SourceBlock	      "lib_robotinohardware/Motor"
+	      SourceType	      "Motor"
+	      num		      "1"
+	      kp		      "255"
+	      ki		      "255"
+	      kd		      "255"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Motor2"
+	      Ports		      [4, 3]
+	      Position		      [430, 268, 520, 327]
+	      SourceBlock	      "lib_robotinohardware/Motor"
+	      SourceType	      "Motor"
+	      num		      "2"
+	      kp		      "255"
+	      ki		      "255"
+	      kd		      "255"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "OmniDrive"
+	      Ports		      [4, 3]
+	      Position		      [290, 179, 345, 276]
+	      SourceBlock	      "lib_robotinohardware/OmniDrive"
+	      SourceType	      "OmniDrive Object"
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "OmniDrive"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OmniDrive"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -85]
+	      DstBlock		      "Motor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OmniDrive"
+	      SrcPort		      2
+	      Points		      [35, 0; 0, -25]
+	      DstBlock		      "Motor1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OmniDrive"
+	      SrcPort		      3
+	      Points		      [35, 0; 0, 30]
+	      DstBlock		      "Motor2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ComID"
+	      SrcPort		      1
+	      Points		      [95, 0]
+	      Branch {
+		Points			[10, 0; 0, 105]
+		DstBlock		"OmniDrive"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 15; 250, 0]
+		Branch {
+		  DstBlock		  "Motor"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 75]
+		  Branch {
+		    Points		    [0, 15]
+		    DstBlock		    "Motor1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 100]
+		    DstBlock		    "Motor2"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -30]
+	      DstBlock		      "OmniDrive"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem02"
+	  Ports			  [1, 0, 0, 0, 0, 0, 0, 1]
+	  Position		  [270, 46, 350, 84]
+	  NamePlacement		  "alternate"
+	  FontName		  "Helvetica"
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  System {
+	    Name		    "Subsystem02"
+	    Location		    [187, 177, 1092, 846]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ComID"
+	      Position		      [25, 78, 55, 92]
+	      FontName		      "Helvetica"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      ActionPort
+	      Name		      "Action"
+	      Position		      [20, 15, 94, 36]
+	      InitializeStates	      "reset"
+	      ActionType	      "then"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [220, 270, 250, 300]
+	      Value		      "10"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [215, 205, 245, 235]
+	      Value		      "100"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Motor"
+	      Ports		      [4, 3]
+	      Position		      [430, 93, 520, 152]
+	      SourceBlock	      "lib_robotinohardware/Motor"
+	      SourceType	      "Motor"
+	      num		      "0"
+	      kp		      "255"
+	      ki		      "255"
+	      kd		      "255"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Motor1"
+	      Ports		      [4, 3]
+	      Position		      [430, 183, 520, 242]
+	      SourceBlock	      "lib_robotinohardware/Motor"
+	      SourceType	      "Motor"
+	      num		      "1"
+	      kp		      "255"
+	      ki		      "255"
+	      kd		      "255"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Motor2"
+	      Ports		      [4, 3]
+	      Position		      [430, 268, 520, 327]
+	      SourceBlock	      "lib_robotinohardware/Motor"
+	      SourceType	      "Motor"
+	      num		      "2"
+	      kp		      "255"
+	      ki		      "255"
+	      kd		      "255"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "OmniDrive"
+	      Ports		      [4, 3]
+	      Position		      [290, 179, 345, 276]
+	      SourceBlock	      "lib_robotinohardware/OmniDrive"
+	      SourceType	      "OmniDrive Object"
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      Points		      [0, -5]
+	      DstBlock		      "OmniDrive"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OmniDrive"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -85]
+	      DstBlock		      "Motor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OmniDrive"
+	      SrcPort		      2
+	      Points		      [35, 0; 0, -25]
+	      DstBlock		      "Motor1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "OmniDrive"
+	      SrcPort		      3
+	      Points		      [35, 0; 0, 30]
+	      DstBlock		      "Motor2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ComID"
+	      SrcPort		      1
+	      Points		      [95, 0]
+	      Branch {
+		Points			[10, 0; 0, 105]
+		DstBlock		"OmniDrive"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 15; 240, 0]
+		Branch {
+		  DstBlock		  "Motor"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 85]
+		  Branch {
+		    Points		    [0, 5]
+		    DstBlock		    "Motor1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 90]
+		    DstBlock		    "Motor2"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -20]
+	      DstBlock		      "OmniDrive"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "DI0"
+	  SrcPort		  1
+	  DstBlock		  "If"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ComID"
+	  SrcPort		  1
+	  Points		  [95, 0; 0, -20; 90, 0]
+	  Branch {
+	    DstBlock		    "Subsystem02"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 120]
+	    DstBlock		    "Subsystem01"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "If"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  DstBlock		  "Subsystem02"
+	  DstPort		  ifaction
+	}
+	Line {
+	  SrcBlock		  "If"
+	  SrcPort		  2
+	  Points		  [5, 0; 0, 84]
+	  DstBlock		  "Subsystem01"
+	  DstPort		  ifaction
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Com"
+      SrcPort		      1
+      Points		      [10, 0; 0, 10]
+      Branch {
+	Points			[0, 200]
+	Branch {
+	  Points		  [0, 5]
+	  DstBlock		  "DigitalInput0"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 65]
+	  Branch {
+	    Points		    [0, 5]
+	    DstBlock		    "DigitalInput1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Subsystem01"
+	    DstPort		    1
+	  }
+	}
+      }
+      Branch {
+	Points			[0, 165; 350, 0]
+	DstBlock		"Subsystem1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "DigitalInput1"
+      SrcPort		      1
+      Points		      [20, 0; 0, -25]
+      DstBlock		      "Logical\nOperator"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "DigitalInput0"
+      SrcPort		      1
+      Points		      [20, 0; 0, 25; 10, 0]
+      Branch {
+	DstBlock		"Logical\nOperator"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -25]
+	DstBlock		"Subsystem1"
+	DstPort			2
+      }
+    }
+    Line {
+      Labels		      [0, 0]
+      SrcBlock		      "If"
+      SrcPort		      2
+      Points		      [35, 0; 0, 99]
+      DstBlock		      "Subsystem01"
+      DstPort		      ifaction
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator"
+      SrcPort		      1
+      DstBlock		      "If"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "If"
+      SrcPort		      1
+      Points		      [85, 0]
+      DstBlock		      "Subsystem1"
+      DstPort		      ifaction
+    }
+    Annotation {
+      Position		      [591, 451]
+    }
+  }
+}

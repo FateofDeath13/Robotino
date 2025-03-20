@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "E:\\Robotino\\api2\\include\\rec\\robotino\\api2",
+                "E:\\Robotino\\api2\\include\\rec\\robotino\\api2\\c"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/msys64/ucrt64/bin"
+        }
+    ],
+    "version": 4
+}

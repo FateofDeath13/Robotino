@@ -1,0 +1,142 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Camera Example</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-07">
+      <meta name="m-file" content="html_simulink_example_LineFollowerCamera"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>Camera Example</h1>
+         <introduction>
+            <p>This example illustrates the use of the Camera on Robotino. Robotino is equipped with a color camera with VGA resolution and
+               using this Camera, we can make Robotino detect a black line on the floor.
+            </p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#2">Blocks used in this example</a></li>
+               <li><a href="#3">Description</a></li>
+            </ul>
+         </div>
+         <p><img vspace="5" hspace="5" src="../images/linefollow_example.png"> </p>
+         <h2>Blocks used in this example<a name="2"></a></h2>
+         <p><a href="html_simulink_Bumper.html">Bumper</a></p>
+         <p><a href="html_simulink_Camera.html">Camera</a></p>
+         <p><a href="html_simulink_Com.html">Com</a></p>
+         <p><a href="html_simulink_LineFollower.html">LineFollower</a></p>
+         <p><a href="html_simulink_Motor.html">Motor</a></p>
+         <p><a href="html_simulink_OmniDrive.html">OmniDrive</a></p>
+         <h2>Description<a name="3"></a></h2>
+         <p>Using the color camera on Robotino, we can obtain images from Robotino. After obtaining the images (in R, G, B values), they
+            are sent to the <a href="html_simulink_LineFollower.html">Line Follower block</a> which inturn caculates the target x-velocity, y-velocity and omega values for Robotino. These are then used as inputs for
+            the <a href="html_simulink_OmniDrive.html">OmniDrive block</a>. The motor speeds returned from the <a href="html_simulink_OmniDrive.html">OmniDrive block</a> are then set for the three <a href="html_simulink_Motor.html">Motor</a> blocks.
+         </p>
+         <p><img vspace="5" hspace="5" src="../images/simulink_example_camera.png"> </p>
+         <p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Camera Example
+% This example illustrates the use of the Camera on Robotino.
+% Robotino is equipped with a color camera with VGA resolution and using
+% this Camera, we can make Robotino detect a black line on the floor.
+%%
+% 
+% <<../images/linefollow_example.png>>
+%
+%% Blocks used in this example
+%
+% <html_simulink_Bumper.html Bumper>
+%
+% <html_simulink_Camera.html Camera>
+%
+% <html_simulink_Com.html Com>
+%
+% <html_simulink_LineFollower.html LineFollower>
+%
+% <html_simulink_Motor.html Motor>
+%
+% <html_simulink_OmniDrive.html OmniDrive>
+%% Description
+% Using the color camera on Robotino, we can obtain images from Robotino.
+% After obtaining the images (in R, G, B values), they are sent to the
+% <html_simulink_LineFollower.html Line Follower block> which inturn
+% caculates the target x-velocity, y-velocity and omega values for
+% Robotino. These are then used as inputs for the
+% <html_simulink_OmniDrive.html OmniDrive block>. The motor speeds returned
+% from the <html_simulink_OmniDrive.html OmniDrive block> are then set for
+% the three <html_simulink_Motor.html Motor> blocks.
+%
+% <<../images/simulink_example_camera.png>>
+%
+##### SOURCE END #####
+-->
+   </body>
+</html>

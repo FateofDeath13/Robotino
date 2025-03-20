@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<toc version="1.0">
+<!-- First tocitem specifies top level in Help browser Contents pane -->
+<!-- This can be a roadmap page, as shown below, or a content page -->
+
+    <tocitem target="html_Home.html">Robotino Toolbox
+        <!-- Nest tocitems to create hierarchical entries in  Contents-->
+        <!-- To include icons, use the following syntax for tocitems: -->
+        <!-- <tocitem target="foo.html" image="HelpIcon.NAME"> -->
+        <!-- Title-of-Section </tocitem> -->
+        <!-- where NAME is one of the following (use capital letters): -->
+        <!-- FUNCTION, USER_GUIDE, EXAMPLES, BLOCK, GETTING_STARTED, -->
+        <!-- DEMOS, RELEASE_NOTES --> 
+        <!-- Icon images used for these entries are also stored in -->
+        <!-- matlabroot/toolbox/matlab/icons -->
+        <!-- A Getting Started Guide usually comes first -->
+        <tocitem target="html_Intro.html" image="$toolbox/matlab/icons/greenarrowicon.gif">
+            Introduction to Robotino Toolbox
+        </tocitem>
+ 
+        <!-- Function reference next -->
+		<tocitem target="html_Functions.html"> Matlab Functions
+			<tocitem target="html_AnalogInput.html">AnalogInput
+				<tocitem target="AnalogInput_construct.html">AnalogInput_construct</tocitem>
+				<tocitem target="AnalogInput_destroy.html">AnalogInput_destroy</tocitem>
+				<tocitem target="AnalogInput_num.html">AnalogInput_num</tocitem>
+				<tocitem target="AnalogInput_setComId.html">AnalogInput_setComId</tocitem>
+				<tocitem target="AnalogInput_value.html">AnalogInput_value</tocitem>
+			</tocitem>
+			<tocitem target="html_Bumper.html">Bumper
+				<tocitem target="Bumper_construct.html">Bumper_construct</tocitem>
+				<tocitem target="Bumper_destroy.html">Bumper_destroy</tocitem>
+				<tocitem target="Bumper_setComId.html">Bumper_setComId</tocitem>
+				<tocitem target="Bumper_value.html">Bumper_value</tocitem>
+			</tocitem>
+			<tocitem target="html_Camera.html">Camera
+				<tocitem target="Camera_construct.html">Camera_construct</tocitem>
+				<tocitem target="Camera_destroy.html">Camera_destroy</tocitem>
+				<tocitem target="Camera_getImage.html">Camera_getImage</tocitem>
+				<tocitem target="Camera_grab.html">Camera_grab</tocitem>
+				<tocitem target="Camera_imageSize.html">Camera_imageSize</tocitem>
+				<tocitem target="Camera_setComId.html">Camera_setComId</tocitem>
+			</tocitem>
+			<tocitem target="html_Com.html">Com
+				<tocitem target="Com_connect.html">Com_connect</tocitem>
+				<tocitem target="Com_construct.html">Com_construct</tocitem>
+				<tocitem target="Com_destroy.html">Com_destroy</tocitem>
+				<tocitem target="Com_disconnect.html">Com_disconnect</tocitem>
+				<tocitem target="Com_isConnected.html">Com_isConnected</tocitem>
+				<tocitem target="Com_setAddress.html">Com_setAddress</tocitem>
+			</tocitem>
+			<tocitem target="html_DigitalInput.html">DigitalInput
+				<tocitem target="DigitalInput_construct.html">DigitalInput_construct</tocitem>
+				<tocitem target="DigitalInput_destroy.html">DigitalInput_destroy</tocitem>
+				<tocitem target="DigitalInput_num.html">DigitalInput_num</tocitem>
+				<tocitem target="DigitalInput_setComId.html">DigitalInput_setComId</tocitem>
+				<tocitem target="DigitalInput_value.html">DigitalInput_value</tocitem>
+			</tocitem>
+			<tocitem target="html_DigitalOutput.html">DigitalOutput
+				<tocitem target="DigitalOutput_construct.html">DigitalOutput_construct</tocitem>
+				<tocitem target="DigitalOutput_destroy.html">DigitalOutput_destroy</tocitem>
+				<tocitem target="DigitalOutput_num.html">DigitalOutput_num</tocitem>
+				<tocitem target="DigitalOutput_setComId.html">DigitalOutput_setComId</tocitem>
+				<tocitem target="DigitalOutput_setValue.html">DigitalOutput_setValue</tocitem>
+			</tocitem>
+			<tocitem target="html_DistanceSensor.html">DistanceSensor
+				<tocitem target="DistanceSensor_construct.html">DistanceSensor_construct</tocitem>
+				<tocitem target="DistanceSensor_destroy.html">DistanceSensor_destroy</tocitem>
+				<tocitem target="DistanceSensor_heading.html">DistanceSensor_heading</tocitem>
+				<tocitem target="DistanceSensor_num.html">DistanceSensor_num</tocitem>
+				<tocitem target="DistanceSensor_setComId.html">DistanceSensor_setComId</tocitem>
+				<tocitem target="DistanceSensor_voltage.html">DistanceSensor_voltage</tocitem>
+			</tocitem>
+			<tocitem target="html_EncoderInput.html">EncoderInput
+				<tocitem target="EncoderInput_construct.html">EncoderInput_construct</tocitem>
+				<tocitem target="EncoderInput_destroy.html">EncoderInput_destroy</tocitem>
+				<tocitem target="EncoderInput_position.html">EncoderInput_position</tocitem>
+				<tocitem target="EncoderInput_resetPosition.html">EncoderInput_resetPosition</tocitem>
+				<tocitem target="EncoderInput_setComId.html">EncoderInput_setComId</tocitem>
+				<tocitem target="EncoderInput_velocity.html">EncoderInput_velocity</tocitem>
+			</tocitem>
+			<tocitem target="html_Gripper.html">Gripper
+				<tocitem target="Gripper_close.html">Gripper_close</tocitem>
+				<tocitem target="Gripper_construct.html">Gripper_construct</tocitem>
+				<tocitem target="Gripper_destroy.html">Gripper_destroy</tocitem>
+				<tocitem target="Gripper_isClosed.html">Gripper_isClosed</tocitem>
+				<tocitem target="Gripper_isOpened.html">Gripper_isOpened</tocitem>
+				<tocitem target="Gripper_open.html">Gripper_open</tocitem>
+				<tocitem target="Gripper_setComId.html">Gripper_setComId</tocitem>
+			</tocitem>
+			<tocitem target="html_Info.html">Info
+				<tocitem target="Info_construct.html">Info_construct</tocitem>
+				<tocitem target="Info_destroy.html">Info_destroy</tocitem>
+				<tocitem target="Info_setComId.html">Info_setComId</tocitem>
+			</tocitem>
+			<tocitem target="html_LaserRangeFinder.html">LaserRangeFinder
+				<tocitem target="LaserRangeFinder_construct.html">LaserRangeFinder_construct</tocitem>
+				<tocitem target="LaserRangeFinder_destroy.html">LaserRangeFinder_destroy</tocitem>
+				<tocitem target="LaserRangeFinder_getReadings.html">LaserRangeFinder_getReadings</tocitem>
+				<tocitem target="LaserRangeFinder_grab.html">LaserRangeFinder_grab</tocitem>
+				<tocitem target="LaserRangeFinder_setComId.html">LaserRangeFinder_setComId</tocitem>
+			</tocitem>
+			<tocitem target="html_Manipulator.html">Manipulator
+				<tocitem target="Manipulator_construct.html">Manipulator_construct</tocitem>
+				<tocitem target="Manipulator_destroy.html">Manipulator_destroy</tocitem>
+				<tocitem target="Manipulator_getReadings.html">Manipulator_getReadings</tocitem>
+				<tocitem target="Manipulator_grab.html">Manipulator_grab</tocitem>
+				<tocitem target="Manipulator_setAxes.html">Manipulator_setAxes</tocitem>
+				<tocitem target="Manipulator_setAxis.html">Manipulator_setAxis</tocitem>
+				<tocitem target="Manipulator_setComId.html">Manipulator_setComId</tocitem>
+			</tocitem>
+			<tocitem target="html_Motor.html">Motor
+				<tocitem target="Motor_actualPosition.html">Motor_actualPosition</tocitem>
+				<tocitem target="Motor_actualSpeed.html">Motor_actualSpeed</tocitem>
+				<tocitem target="Motor_construct.html">Motor_construct</tocitem>
+				<tocitem target="Motor_destroy.html">Motor_destroy</tocitem>
+				<tocitem target="Motor_motorCurrent.html">Motor_motorCurrent</tocitem>
+				<tocitem target="Motor_num.html">Motor_num</tocitem>
+				<tocitem target="Motor_rawCurrentMeasurement.html">Motor_rawCurrentMeasurement</tocitem>
+				<tocitem target="Motor_resetPosition.html">Motor_resetPosition</tocitem>
+				<tocitem target="Motor_setBrake.html">Motor_setBrake</tocitem>
+				<tocitem target="Motor_setComId.html">Motor_setComId</tocitem>
+				<tocitem target="Motor_setPID.html">Motor_setPID</tocitem>
+				<tocitem target="Motor_setSetPointSpeed.html">Motor_setSetPointSpeed</tocitem>
+			</tocitem>
+            <tocitem target="html_NorthStar.html">NorthStar
+				<tocitem target="NorthStar_construct.html">NorthStar_construct</tocitem>
+				<tocitem target="NorthStar_destroy.html">NorthStar_destroy</tocitem>
+				<tocitem target="NorthStar_magSpot0.html">NorthStar_magSpot0</tocitem>
+				<tocitem target="NorthStar_magSpot1.html">NorthStar_magSpot1</tocitem>
+				<tocitem target="NorthStar_numSpotsVisible.html">NorthStar_numSpotsVisible</tocitem>
+				<tocitem target="NorthStar_posTheta.html">NorthStar_posTheta</tocitem>
+				<tocitem target="NorthStar_posX.html">NorthStar_posX</tocitem>
+				<tocitem target="NorthStar_posY.html">NorthStar_posY</tocitem>
+				<tocitem target="NorthStar_roomId.html">NorthStar_roomId</tocitem>
+				<tocitem target="NorthStar_sequenceNo.html">NorthStar_sequenceNo</tocitem>
+				<tocitem target="NorthStar_setCeilingCal.html">NorthStar_setCeilingCal</tocitem>
+				<tocitem target="NorthStar_setComId.html">NorthStar_setComId</tocitem>
+				<tocitem target="NorthStar_setRoomId.html">NorthStar_setRoomId</tocitem>
+			</tocitem>
+			<tocitem target="html_Odometry.html">Odometry
+				<tocitem target="Odometry_construct.html">Odometry_construct</tocitem>
+				<tocitem target="Odometry_destroy.html">Odometry_destroy</tocitem>
+				<tocitem target="Odometry_get.html">Odometry_get</tocitem>
+				<tocitem target="Odometry_set.html">Odometry_set</tocitem>
+				<tocitem target="Odometry_setComId.html">Odometry_setComId</tocitem>
+			</tocitem>
+			<tocitem target="html_OmniDrive.html">OmniDrive
+				<tocitem target="OmniDrive_construct.html">OmniDrive_construct</tocitem>
+				<tocitem target="OmniDrive_destroy.html">OmniDrive_destroy</tocitem>
+				<tocitem target="OmniDrive_getVelocities.html">OmniDrive_getVelocities</tocitem>
+				<tocitem target="OmniDrive_setComId.html">OmniDrive_setComId</tocitem>
+				<tocitem target="OmniDrive_setVelocity.html">OmniDrive_setVelocity</tocitem>
+			</tocitem>
+			<tocitem target="html_PowerManagement.html">PowerManagement
+				<tocitem target="PowerManagement_construct.html">PowerManagement_construct</tocitem>
+				<tocitem target="PowerManagement_current.html">PowerManagement_current</tocitem>
+				<tocitem target="PowerManagement_destroy.html">PowerManagement_destroy</tocitem>
+				<tocitem target="PowerManagement_setComId.html">PowerManagement_setComId</tocitem>
+				<tocitem target="PowerManagement_voltage.html">PowerManagement_voltage</tocitem>
+			</tocitem>
+			<tocitem target="html_PowerOutput.html">PowerOutput
+				<tocitem target="PowerOutput_construct.html">PowerOutput_construct</tocitem>
+				<tocitem target="PowerOutput_current.html">PowerOutput_current</tocitem>
+				<tocitem target="PowerOutput_destroy.html">PowerOutput_destroy</tocitem>
+				<tocitem target="PowerOutput_rawCurrentMeasurement.html">PowerOutput_rawCurrentMeasurement</tocitem>
+				<tocitem target="PowerOutput_setComId.html">PowerOutput_setComId</tocitem>
+				<tocitem target="PowerOutput_setValue.html">PowerOutput_setValue</tocitem>
+			</tocitem>
+			<tocitem target="html_Relay.html">Relay
+				<tocitem target="Relay_construct.html">Relay_construct</tocitem>
+				<tocitem target="Relay_destroy.html">Relay_destroy</tocitem>
+				<tocitem target="Relay_num.html">Relay_num</tocitem>
+				<tocitem target="Relay_setComId.html">Relay_setComId</tocitem>
+				<tocitem target="Relay_setValue.html">Relay_setValue</tocitem>
+			</tocitem>
+			<tocitem target="html_CompactBHA.html">CompactBHA
+				<tocitem target="CompactBHA_construct.html">CompactBHA_construct</tocitem>
+				<tocitem target="CompactBHA_destroy.html">CompactBHA_destroy</tocitem>
+				<tocitem target="CompactBHA_foilPot.html">CompactBHA_foilPot</tocitem>
+				<tocitem target="CompactBHA_pressures.html">CompactBHA_pressures</tocitem>
+				<tocitem target="CompactBHA_pressureSensor.html">CompactBHA_pressureSensor</tocitem>
+				<tocitem target="CompactBHA_setComId.html">CompactBHA_setComId</tocitem>
+				<tocitem target="CompactBHA_setCompressorsEnabled.html">CompactBHA_setCompressorsEnabled</tocitem>
+				<tocitem target="CompactBHA_setGripperValve1.html">CompactBHA_setGripperValve1</tocitem>
+				<tocitem target="CompactBHA_setGripperValve2.html">CompactBHA_setGripperValve2</tocitem>
+				<tocitem target="CompactBHA_setPressures.html">CompactBHA_setPressures</tocitem>
+				<tocitem target="CompactBHA_setWaterDrainValve.html">CompactBHA_setWaterDrainValve</tocitem>
+				<tocitem target="CompactBHA_stringPots.html">CompactBHA_stringPots</tocitem>
+			</tocitem>
+			<tocitem target="html_Kinect.html">Kinect
+				<tocitem target="Kinect_construct.html">Kinect_construct</tocitem>
+				<tocitem target="Kinect_destroy.html">Kinect_destroy</tocitem>
+				<tocitem target="Kinect_getReadings.html">Kinect_getReadings</tocitem>
+				<tocitem target="Kinect_grab.html">Kinect_grab</tocitem>
+				<tocitem target="Kinect_setComId.html">Kinect_setComId</tocitem>
+				<tocitem target="Kinect_setKinectNumber.html">Kinect_setKinectNumber</tocitem>
+				<tocitem target="Kinect_dataSize.html">Kinect_dataSize</tocitem>
+			</tocitem>
+		</tocitem>
+        <!-- The first file lists all of the functions, categorizing them -->
+        <!-- Examples -->
+        <tocitem target="html_Examples.html" image="$toolbox/matlab/icons/demoicon.gif">Examples
+			<!-- Inside examples, list all examples -->
+			<tocitem target="example_matlab_LineFollowerCamera.html">Camera</tocitem>
+			<tocitem target="example_matlab_DistanceSensor.html">Distance Sensor</tocitem>
+			<tocitem target="example_matlab_LaserRangeFinder.html">Laser Range Finder</tocitem>
+			<tocitem target="example_matlab_LineFollowerAnalogInput.html">Analog Input</tocitem>
+			<tocitem target="example_matlab_LineFollowerDigitalInput.html">Digital Input</tocitem>
+			<tocitem target="example_matlab_Manipulator.html">Manipulator</tocitem>
+			<tocitem target="example_matlab_CompactBHA.html">Compact BHA</tocitem>
+			<tocitem target="example_matlab_kinect.html">Kinect</tocitem>
+		</tocitem>
+    </tocitem>
+</toc>

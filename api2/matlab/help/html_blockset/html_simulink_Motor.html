@@ -1,0 +1,176 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Motor</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-07">
+      <meta name="m-file" content="html_simulink_Motor"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>Motor</h1>
+         <introduction>
+            <p><img vspace="5" hspace="5" src="../images/simulink_motor.png"> </p>
+            <p>Robotino has three motors which it uses for omnidirectional motion. The motors can be controlled individually by providing
+               the Motor Number [0 - 2] . Speed, PID values, brake can all be controlled using the simulink block provided.
+            </p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#1">Block properties</a></li>
+               <li><a href="#2">Examples</a></li>
+            </ul>
+         </div>
+         <h2>Block properties<a name="1"></a></h2>
+         <p><b>Inputs</b></p>
+         <div>
+            <ol>
+               <li>ComId</li>
+               <li>Target speed [rpm]</li>
+               <li>Brake - set true (1) to activate the brake, set false (0) for otherwise.</li>
+               <li>Reset Position - to reset the position of the motor.</li>
+            </ol>
+         </div>
+         <p><b>Outputs</b></p>
+         <div>
+            <ol>
+               <li>Actual speed - the actual speed (rpm) of a motor.</li>
+               <li>Actual position - the actual position of a motor.</li>
+               <li>Motor current - the current (A) of a motor.</li>
+            </ol>
+         </div>
+         <p><b>Parameters</b></p>
+         <div>
+            <ol>
+               <li>Motor number - the motor number [0 - 2]</li>
+               <li>Constant P - the proportional constant. Typical value 0.95.</li>
+               <li>Constant I - the integral constant. Typical value 0.1.</li>
+               <li>Constant D - the differential constant. Typical value 0.01.</li>
+            </ol>
+         </div>
+         <h2>Examples<a name="2"></a></h2>
+         <p><a href="html_simulink_example_DistanceSensor.html">DistanceSensor Example</a></p>
+         <p><a href="html_simulink_example_LaserRangeFinder.html">LaserRangeFinder Example</a></p>
+         <p><a href="html_simulink_example_LineFollowerAnalogInput.html">AnalogInput Example</a></p>
+         <p><a href="html_simulink_example_LineFollowerCamera.html">Camera Example</a></p>
+         <p><a href="html_simulink_example_LineFollowerDigitalInput.html">DigitalInput Example</a></p>
+         <p><a href="html_simulink_example_RobotinoHardware.html">RobotinoHardware Example</a></p>
+         <p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Motor
+%
+% <<../images/simulink_motor.png>>
+%
+% Robotino has three motors which it uses for omnidirectional motion. The
+% motors can be controlled individually by providing the Motor Number [0 -
+% 2] . Speed, PID values, brake can all be controlled using the simulink block
+% provided.
+%% Block properties
+%
+% *Inputs*
+%
+% # ComId
+% # Target speed [rpm]
+% # Brake - set true (1) to activate the brake, set false (0) for
+% otherwise.
+% # Reset Position - to reset the position of the motor.
+%
+% *Outputs*
+% 
+% # Actual speed - the actual speed (rpm) of a motor.
+% # Actual position - the actual position of a motor.
+% # Motor current - the current (A) of a motor.
+%
+% *Parameters*
+%
+% # Motor number - the motor number [0 - 2]
+% # Constant P - the proportional constant. Typical value 0.95.
+% # Constant I - the integral constant. Typical value 0.1.
+% # Constant D - the differential constant. Typical value 0.01.
+%% Examples
+%
+% <html_simulink_example_DistanceSensor.html DistanceSensor Example>
+%
+% <html_simulink_example_LaserRangeFinder.html LaserRangeFinder Example>
+%
+% <html_simulink_example_LineFollowerAnalogInput.html AnalogInput Example>
+%
+% <html_simulink_example_LineFollowerCamera.html Camera Example>
+%
+% <html_simulink_example_LineFollowerDigitalInput.html DigitalInput
+% Example>
+%
+% <html_simulink_example_RobotinoHardware.html RobotinoHardware Example>
+
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

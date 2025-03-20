@@ -1,0 +1,154 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>AnalogInput</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-07">
+      <meta name="m-file" content="html_simulink_AnalogInput"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>AnalogInput</h1>
+         <introduction></introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#3">Block properties</a></li>
+               <li><a href="#4">Examples</a></li>
+            </ul>
+         </div>
+         <p><img vspace="5" hspace="5" src="../images/simulink_analoginput.png"> </p>
+         <p>There are 8 Analog Inputs available on Robotino (see figure below: AIN1 - AIN8). The analog inputs can be connected to various
+            devices/detectors and values can be read from them. For instance, Robotino could be equipped with inductive sensors connected
+            to its analog inputs.
+         </p>
+         <p><img vspace="5" hspace="5" src="../images/robotino_io_connector.png"> </p>
+         <h2>Block properties<a name="3"></a></h2>
+         <p><b>Inputs</b></p>
+         <div>
+            <ol>
+               <li>ComId</li>
+            </ol>
+         </div>
+         <p><b>Outputs</b></p>
+         <div>
+            <ol>
+               <li>Value - the value at the specified AnalogInput number.</li>
+            </ol>
+         </div>
+         <p><b>Parameters</b></p>
+         <div>
+            <ol>
+               <li>AnalogInput Number - Range is 0 - 7</li>
+            </ol>
+         </div>
+         <h2>Examples<a name="4"></a></h2>
+         <p><a href="html_simulink_example_AnalogInput.html">AnalogInput Example</a></p>
+         <p><a href="html_simulink_example_RobotinoHardware.html">RobotinoHardware</a></p>
+         <p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% AnalogInput
+%%
+% 
+% <<../images/simulink_analoginput.png>>
+% 
+%
+% There are 8 Analog Inputs available on Robotino (see figure below: AIN1 - AIN8). 
+% The analog inputs can be connected to various devices/detectors and values can 
+% be read from them. 
+% For instance, Robotino could be equipped with inductive 
+% sensors connected to its analog inputs.
+%%
+% 
+% <<../images/robotino_io_connector.png>>
+%
+%%
+%% Block properties
+% *Inputs* 
+%
+% # ComId
+%
+% *Outputs*
+%
+% # Value - the value at the specified AnalogInput number.
+%
+% *Parameters*
+%
+% # AnalogInput Number - Range is 0 - 7
+%
+%% Examples
+%
+% <html_simulink_example_AnalogInput.html AnalogInput Example>
+%
+% <html_simulink_example_RobotinoHardware.html RobotinoHardware>
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

@@ -1,0 +1,116 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>NorthStar_roomId</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-04-19">
+      <meta name="m-file" content="NorthStar_roomId"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>NorthStar_roomId</h1>
+         <introduction>
+            <p>Returns the Id of the current room.</p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#1">Function</a></li>
+               <li><a href="#2">Example Usage</a></li>
+            </ul>
+         </div>
+         <h2>Function<a name="1"></a></h2>
+         <p><tt>[ roomId ] = NorthStar_roomId( NorthStarId )</tt></p>
+         <p>NorthStarId is the id of the NorthStar object.</p>
+         <h2>Example Usage<a name="2"></a></h2>
+         <p><tt>roomId = NorthStar_roomId( 0 )</tt></p><pre class="codeinput"><span class="keyword">function</span> [ roomId ] = NorthStar_roomId( NorthStarId )
+<span class="keyword">if</span> ( init )
+    roomId = logical( calllib( <span class="string">'rec_robotino_com_c'</span>,<span class="string">'NorthStar_roomId'</span>, NorthStarId ) );
+<span class="keyword">end</span>;
+</pre><p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% NorthStar_roomId
+%
+% Returns the Id of the current room.
+%% Function
+% |[ roomId ] = NorthStar_roomId( NorthStarId )|
+%
+% NorthStarId is the id of the NorthStar object.
+%% Example Usage
+%
+% |roomId = NorthStar_roomId( 0 )|
+function [ roomId ] = NorthStar_roomId( NorthStarId )
+if ( init )
+    roomId = logical( calllib( 'rec_robotino_com_c','NorthStar_roomId', NorthStarId ) );
+end;
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

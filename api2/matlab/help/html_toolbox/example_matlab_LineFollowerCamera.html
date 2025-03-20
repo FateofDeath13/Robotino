@@ -1,0 +1,386 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Camera Example</title>
+      <meta name="generator" content="MATLAB 7.5">
+      <meta name="date" content="2011-03-04">
+      <meta name="m-file" content="example_matlab_LineFollowerCamera"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h1>Camera Example</h1>
+         <introduction>
+            <p>This example illustrates the use of the Camera on Robotino. Robotino is equipped with a color camera with VGA resolution and
+               using this Camera, we can make Robotino detect a black line on the floor.
+            </p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#2">Description</a></li>
+               <li><a href="#3">Code explanation</a></li>
+               <li><a href="#11">Video</a></li>
+            </ul>
+         </div>
+         <p><img vspace="5" hspace="5" src="../images/linefollow_example.png"> </p>
+         <h2>Description<a name="2"></a></h2>
+         <p>Using the color camera on Robotino, we can obtain images from Robotino. After obtaining the images, a Prewitt Edge Detector
+            Filter is applied and the x-position of the line is calculated. Based on that the x-velocity, y-velocity and omega values
+            are calculated for Robotino.
+         </p>
+         <h2>Code explanation<a name="3"></a></h2>
+         <p>First we will need to construct objects that we will be requiring in our program. In this program, we will require objects
+            of <tt>Com</tt>, <tt>OmniDrive</tt>, <tt>Camera</tt> and <tt>Bumper</tt>. This is done as follows.
+         </p><pre class="codeinput">ComId = Com_construct;
+OmniDriveId = OmniDrive_construct;
+CameraId = Camera_construct;
+BumperId = Bumper_construct;
+</pre><p>Upon successful contruction of the objects, an Id is returned for each object. This Id is used later when communicating with
+            Robotino. Now we need to set the address of Robotino and then connect to it. This is done as follows.
+         </p>
+         <p><b>Note the IP address and port number might be different</b></p><pre class="codeinput">Com_setAddress(ComId, <span class="string">'127.0.0.1:8081'</span>);
+Com_connect(ComId);
+</pre><p>Once we are connected to Robotino, we need to bind each of the object we created to Robotino using the ComId. This can be
+            done as follows.
+         </p><pre class="codeinput">OmniDrive_setComId(OmniDriveId, ComId);
+Camera_setComId(CameraId, ComId);
+Bumper_setComId(BumperId, ComId);
+</pre><p>We then start our "stop watch" to limit the example execution to 60 seconds.</p><pre class="codeinput">tStart = tic;
+</pre><p>We initiate a while loop based on the condition that Robotino's bumper hasn't detected a collision. And as explained in the
+            'Description' above, we obtain images from Robotino's camera, apply an edge detection filter, detect the x position of the
+            line and move Robotino accordingly
+         </p><pre class="codeinput"><span class="keyword">while</span> (Bumper_value(BumperId) ~= 1)
+    tElapsed = toc(tStart);
+    <span class="comment">% If 60 seconds are elapsed then exit while loop</span>
+    <span class="keyword">if</span>(tElapsed &gt;= 60 )
+        <span class="keyword">break</span>;
+    <span class="keyword">end</span>;
+
+    <span class="keyword">if</span> ~(Camera_setStreaming(CameraId, 1) == 1)
+        disp(<span class="string">'Camera_setStreaming failed.'</span>);
+    <span class="keyword">end</span>;
+    <span class="keyword">if</span> (Camera_grab(CameraId) == 1)
+        img = Camera_getImage( CameraId );
+        threshold = 50;
+
+        image(img); title(<span class="string">'An image from the camera onboard Robotino'</span>)
+
+        <span class="comment">% Prewitt-Filter</span>
+        Fx = [-1 0 1;-1 0 1;-1 0 1];
+        Fy = [-1 -1 -1;0 0 0;1 1 1];
+        <span class="comment">% region of interest:</span>
+        [m,n,c] = size( img );
+        roi = zeros(20,n,3);
+        roi = img(m-19:m,:,:);
+        <span class="comment">% grayscale:</span>
+        gray = zeros(20,n);
+        gray(:,:) = floor( (1/3)*( roi(:,:,1) + roi(:,:,2) + roi(:,:,3) ) );
+        <span class="comment">% edge detection with Prewitt filters:</span>
+        edge = zeros(20,n);
+        edge(:,:) = abs( floor( (1/2)*( convn(gray,Fx,<span class="string">'same'</span>)+convn(gray,Fy,<span class="string">'same'</span>) ) ) );
+        <span class="comment">% threshold</span>
+        bw = zeros(20,n);
+        <span class="keyword">for</span>(i=1:20)
+            <span class="keyword">for</span>(j=1:n)
+                <span class="keyword">if</span>( edge(i,j) &lt; threshold )
+                    bw(i,j) = 0;
+                <span class="keyword">else</span>
+                    bw(i,j) = 255;
+                <span class="keyword">end</span>;
+            <span class="keyword">end</span>;
+        <span class="keyword">end</span>;
+        <span class="comment">% calculate x-position of line:</span>
+        sum = 0;
+        <span class="keyword">for</span>(j=2:n-1)
+            <span class="keyword">if</span>( bw(1,j) == 0 )
+                sum = sum + j;
+                <span class="keyword">break</span>;
+            <span class="keyword">end</span>;
+        <span class="keyword">end</span>;
+        <span class="keyword">for</span>(j=n-1:-1:2)
+            <span class="keyword">if</span>( bw(1,j) == 0 )
+                sum = sum + j;
+                <span class="keyword">break</span>;
+            <span class="keyword">end</span>;
+        <span class="keyword">end</span>;
+        <span class="keyword">for</span>(j=2:n-1)
+            <span class="keyword">if</span>( bw(20,j) == 0 )
+                sum = sum + j;
+                <span class="keyword">break</span>;
+            <span class="keyword">end</span>;
+        <span class="keyword">end</span>;
+        <span class="keyword">for</span>(j=n-1:-1:2)
+            <span class="keyword">if</span>( bw(20,j) == 0 )
+                sum = sum + j;
+                <span class="keyword">break</span>;
+            <span class="keyword">end</span>;
+        <span class="keyword">end</span>;
+        <span class="comment">% detected x-position of line</span>
+        posx = ceil(sum/4);
+
+        <span class="comment">% calculate velocities</span>
+        err = posx - round( length( img ) / 2 );
+        <span class="keyword">if</span>( posx == 0 || posx == 320 )
+            vx = 0;
+            vy = 20;
+            omega = sign( err )*(-10);
+        <span class="keyword">else</span>
+            <span class="keyword">if</span>( (300 - abs( err )) &gt; 10 )
+                vx = 300 - abs( err );
+            <span class="keyword">else</span>
+                vx = 10;
+            <span class="keyword">end</span>
+            vy = floor( - err/2 );
+            omega = floor( - err/2 );
+        <span class="keyword">end</span>;
+        OmniDrive_setVelocity(OmniDriveId, vx, vy ,omega);
+    <span class="keyword">end</span>;
+<span class="keyword">end</span>;
+</pre><img vspace="5" hspace="5" src="example_matlab_LineFollowerCamera_01.png"> <p>Once 60 seconds have been elapsed and the while loop is exited. We will need to disconnect from Robotino as follows.</p><pre class="codeinput">Com_disconnect(ComId);
+</pre><p>It is also recommended to destroy all objects that we created for our example. This can be done as follows.</p><pre class="codeinput">Camera_destroy(CameraId);
+Bumper_destroy(BumperId);
+OmniDrive_destroy(OmniDriveId);
+Com_destroy(ComId);
+</pre><h2>Video<a name="11"></a></h2>
+         <p>A video of this example running can be viewed on <a href="http://www.youtube.com/watch?v=wfKqx-bjTWk">youtube</a> .
+         </p>
+         <p class="footer"><br>
+            Published with MATLAB&reg; 7.5<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Camera Example
+% This example illustrates the use of the Camera on Robotino.
+% Robotino is equipped with a color camera with VGA resolution and using
+% this Camera, we can make Robotino detect a black line on the floor.
+
+%%
+% 
+% <<../images/linefollow_example.png>>
+%
+
+%% Description
+% Using the color camera on Robotino, we can obtain images from Robotino.
+% After obtaining the images, a Prewitt Edge Detector Filter is applied
+% and the x-position of the line is calculated. Based on that the
+% x-velocity, y-velocity and omega values are calculated for Robotino.
+
+%% Code explanation
+% First we will need to construct objects that we will be requiring in our
+% program. In this program, we will require objects of |Com|, |OmniDrive|,
+% |Camera| and |Bumper|. This is done as follows.
+
+ComId = Com_construct;
+OmniDriveId = OmniDrive_construct;
+CameraId = Camera_construct;
+BumperId = Bumper_construct;
+%%
+% Upon successful contruction of the objects, an Id is returned for each
+% object. This Id is used later when communicating with Robotino. Now we
+% need to set the address of Robotino and then connect to it. This is done
+% as follows.
+%%
+% *Note the IP address and port number might be different*
+
+Com_setAddress(ComId, '127.0.0.1:8081');
+Com_connect(ComId);
+
+%%
+% 
+% Once we are connected to Robotino, we need to bind each of the object we
+% created to Robotino using the ComId. This can be done as follows.
+%
+
+OmniDrive_setComId(OmniDriveId, ComId);
+Camera_setComId(CameraId, ComId);
+Bumper_setComId(BumperId, ComId);
+
+%%
+% 
+% We then start our "stop watch" to limit the example execution to 60
+% seconds.
+% 
+
+tStart = tic;
+
+%%
+% 
+% We initiate a while loop based on the condition that Robotino's bumper
+% hasn't detected a collision. And as explained in the 'Description'
+% above, we obtain images from Robotino's camera, apply an edge detection
+% filter, detect the x position of the line and move Robotino accordingly
+
+while (Bumper_value(BumperId) ~= 1)
+    tElapsed = toc(tStart);
+    % If 60 seconds are elapsed then exit while loop
+    if(tElapsed >= 60 )
+        break;
+    end;
+    
+    if ~(Camera_setStreaming(CameraId, 1) == 1)
+        disp('Camera_setStreaming failed.');
+    end;
+    if (Camera_grab(CameraId) == 1)
+        img = Camera_getImage( CameraId );
+        threshold = 50;
+        
+        image(img); title('An image from the camera onboard Robotino')
+        
+        % Prewitt-Filter
+        Fx = [-1 0 1;-1 0 1;-1 0 1];
+        Fy = [-1 -1 -1;0 0 0;1 1 1];
+        % region of interest:
+        [m,n,c] = size( img );
+        roi = zeros(20,n,3);
+        roi = img(m-19:m,:,:);
+        % grayscale:
+        gray = zeros(20,n);
+        gray(:,:) = floor( (1/3)*( roi(:,:,1) + roi(:,:,2) + roi(:,:,3) ) );
+        % edge detection with Prewitt filters:
+        edge = zeros(20,n);
+        edge(:,:) = abs( floor( (1/2)*( convn(gray,Fx,'same')+convn(gray,Fy,'same') ) ) );
+        % threshold
+        bw = zeros(20,n);
+        for(i=1:20)
+            for(j=1:n)
+                if( edge(i,j) < threshold )
+                    bw(i,j) = 0;
+                else
+                    bw(i,j) = 255;
+                end;
+            end;
+        end;
+        % calculate x-position of line:
+        sum = 0;
+        for(j=2:n-1)
+            if( bw(1,j) == 0 )
+                sum = sum + j;
+                break;
+            end;
+        end;
+        for(j=n-1:-1:2)
+            if( bw(1,j) == 0 )
+                sum = sum + j;
+                break;
+            end;
+        end;
+        for(j=2:n-1)
+            if( bw(20,j) == 0 )
+                sum = sum + j;
+                break;
+            end;
+        end;
+        for(j=n-1:-1:2)
+            if( bw(20,j) == 0 )
+                sum = sum + j;
+                break;
+            end;
+        end;
+        % detected x-position of line
+        posx = ceil(sum/4);
+
+        % calculate velocities
+        err = posx - round( length( img ) / 2 );
+        if( posx == 0 || posx == 320 )
+            vx = 0;
+            vy = 20;
+            omega = sign( err )*(-10);
+        else
+            if( (300 - abs( err )) > 10 )
+                vx = 300 - abs( err );
+            else
+                vx = 10;
+            end
+            vy = floor( - err/2 );
+            omega = floor( - err/2 );
+        end;
+        OmniDrive_setVelocity(OmniDriveId, vx, vy ,omega);
+    end;
+end;
+
+%%
+% 
+% Once 60 seconds have been elapsed and the while loop is exited. We will
+% need to disconnect from Robotino as follows.
+%
+Com_disconnect(ComId);
+
+%%
+% 
+% It is also recommended to destroy all objects that we created for our
+% example. This can be done as follows.
+%
+Camera_destroy(CameraId);
+Bumper_destroy(BumperId);
+OmniDrive_destroy(OmniDriveId);
+Com_destroy(ComId);
+%% Video
+% A video of this example running can be viewed on
+% <http://www.youtube.com/watch?v=wfKqx-bjTWk youtube> .
+##### SOURCE END #####
+-->
+   </body>
+</html>
